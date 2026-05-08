@@ -819,11 +819,15 @@ a:hover {
 
 .realisation-img-wrap img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
+  display: block;
 }
 
 .realisation-card:hover .realisation-img-wrap img {
@@ -2642,23 +2646,8 @@ a:hover {
   }
 }
 
-/* --- PERFORMANCE: Mobile loading skeleton placeholders --- */
+/* --- PERFORMANCE: Image loading placeholders --- */
 .realisation-img-wrap {
   background: var(--white-linen);
   min-height: 120px;
-}
-
-.realisation-img-wrap img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.realisation-img-wrap img[loading="lazy"].loaded,
-.realisation-img-wrap img[loading="lazy"]:complete {
-  opacity: 1;
-}
-
-/* Make image containers have aspect ratio for CLS prevention */
-.realisation-img-wrap img {
-  background: var(--white-linen);
 }
