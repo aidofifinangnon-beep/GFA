@@ -1812,15 +1812,24 @@ a:hover {
 }
 
 /* --- REVEAL ANIMATIONS --- */
-.reveal {
+/* Content is visible by default. JS adds .js-active to <html>,
+   then .reveal elements start hidden and animate in on scroll. */
+.js-active .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Fallback: ensure content is visible if JS takes too long */
+.js-active .reveal.reveal-timeout {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: none !important;
 }
 
 /* --- READING PROGRESS BAR --- */
@@ -2574,4 +2583,82 @@ a:hover {
     width: 40px;
     height: 40px;
   }
+}
+
+
+/* --- PERFORMANCE: Loading Skeleton --- */
+.realisation-img-wrap {
+  background: linear-gradient(110deg, var(--white-linen) 8%, #ece9e1 18%, var(--white-linen) 33%);
+  background-size: 200% 100%;
+  animation: shimmerLoad 1.5s linear infinite;
+}
+
+@keyframes shimmerLoad {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.realisation-img-wrap img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.realisation-img-wrap img[src] {
+  opacity: 1;
+}
+
+/* --- PERFORMANCE: Reduce animations on low-end devices --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- PERFORMANCE: Touch-friendly mobile interactions --- */
+@media (max-width: 768px) {
+  .realisation-card:hover {
+    transform: none;
+  }
+  .realisation-card:hover .realisation-img-wrap img {
+    transform: none;
+  }
+  .skill-card:hover {
+    transform: none;
+  }
+  .software-card:hover {
+    transform: none;
+  }
+  .leadership-card:hover {
+    transform: none;
+  }
+  .photo-rotate-ring {
+    animation: none;
+  }
+  .cover-dark::before,
+  .cover-dark::after {
+    display: none;
+  }
+}
+
+/* --- PERFORMANCE: Mobile loading skeleton placeholders --- */
+.realisation-img-wrap {
+  background: var(--white-linen);
+  min-height: 120px;
+}
+
+.realisation-img-wrap img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.realisation-img-wrap img[loading="lazy"].loaded,
+.realisation-img-wrap img[loading="lazy"]:complete {
+  opacity: 1;
+}
+
+/* Make image containers have aspect ratio for CLS prevention */
+.realisation-img-wrap img {
+  background: var(--white-linen);
 }

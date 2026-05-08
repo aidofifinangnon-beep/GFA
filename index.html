@@ -2,15 +2,23 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Géraud Finangnon AIDOFI — Biographie Professionnelle</title>
     <meta name="description" content="Biographie professionnelle de Géraud Finangnon AIDOFI, Spécialiste en Géomatique Appliquée, SIG, Télédétection et Intelligence Artificielle">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="img/geraud-photo.jpeg">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Inline critical: ensure content is visible even if JS fails -->
+    <style>img{max-width:100%;height:auto}</style>
 </head>
 <body>
+    <!-- Enable JS-dependent features immediately -->
+    <script>document.documentElement.classList.add('js-active');</script>
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
     <!-- Reading Progress Bar -->
     <div class="reading-progress" style="width: 0%;"></div>
 
@@ -539,7 +547,7 @@
                     <!-- 01 - Existing realisations -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/01-abomey-calavi.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/01-abomey-calavi.jpg" alt="Carte de la commune d'Abomey-Calavi" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/01-abomey-calavi.jpg" alt="Carte de la commune d'Abomey-Calavi">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -558,7 +566,7 @@
                     <!-- 02 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/02-founougou.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/02-founougou.jpg" alt="Carte hypsométrique de Founougo" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/02-founougou.jpg" alt="Carte hypsométrique de Founougo">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -577,7 +585,7 @@
                     <!-- 03 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/03-carte-thematique-1.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/03-carte-thematique-1.jpg" alt="Modèle numérique de surface de Bopa" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/03-carte-thematique-1.jpg" alt="Modèle numérique de surface de Bopa">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -596,7 +604,7 @@
                     <!-- 04 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/04-carte-thematique-2.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/04-carte-thematique-2.jpg" alt="Carte de situation Atlas-GIS" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/04-carte-thematique-2.jpg" alt="Carte de situation Atlas-GIS">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -615,7 +623,7 @@
                     <!-- 05 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/05-analyse-spatiale-1.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/05-analyse-spatiale-1.jpg" alt="Accessibilité aux centres de santé - Djidja" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/05-analyse-spatiale-1.jpg" alt="Accessibilité aux centres de santé - Djidja">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -634,7 +642,7 @@
                     <!-- 06 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/06-analyse-spatiale-2.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/06-analyse-spatiale-2.jpg" alt="Accessibilité aux collèges - Tchaourou" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/06-analyse-spatiale-2.jpg" alt="Accessibilité aux collèges - Tchaourou">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -653,7 +661,7 @@
                     <!-- 07 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/07-carte-topographique.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/07-carte-topographique.jpg" alt="Répartition de la population du Bénin" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/07-carte-topographique.jpg" alt="Répartition de la population du Bénin">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -672,7 +680,7 @@
                     <!-- 08 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/08-sig-produit-1.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/08-sig-produit-1.jpg" alt="Plan de masse école Gbecon-Hounli" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/08-sig-produit-1.jpg" alt="Plan de masse école Gbecon-Hounli">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -691,7 +699,7 @@
                     <!-- 09 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/09-sig-produit-2.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/09-sig-produit-2.jpg" alt="Densité de population de Lokossa" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/09-sig-produit-2.jpg" alt="Densité de population de Lokossa">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -710,7 +718,7 @@
                     <!-- 10 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/10-levé-topo.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/10-levé-topo.jpg" alt="Surfaces en eau du lac Nokoué - NDWI" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/10-levé-topo.jpg" alt="Surfaces en eau du lac Nokoué - NDWI">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -729,7 +737,7 @@
                     <!-- 11 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/11-cartographie-1.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/11-cartographie-1.jpg" alt="Occupation du sol et réseau routier de Kandi" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/11-cartographie-1.jpg" alt="Occupation du sol et réseau routier de Kandi">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -748,7 +756,7 @@
                     <!-- 12 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/12-cartographie-2.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/12-cartographie-2.jpg" alt="Unités pédologiques de Toffo" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/12-cartographie-2.jpg" alt="Unités pédologiques de Toffo">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -767,7 +775,7 @@
                     <!-- 13 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/13-donnees-terrain-1.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/13-donnees-terrain-1.jpg" alt="Représentation 3D Fédération Béninoise du Football" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/13-donnees-terrain-1.jpg" alt="Représentation 3D Fédération Béninoise du Football">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -786,7 +794,7 @@
                     <!-- 14 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/14-donnees-terrain-2.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/14-donnees-terrain-2.jpg" alt="Occupation du sol de Covè" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/14-donnees-terrain-2.jpg" alt="Occupation du sol de Covè">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -805,7 +813,7 @@
                     <!-- 15 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/15-donnees-terrain-3.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/15-donnees-terrain-3.jpg" alt="Courbes de niveau FBF Gbecon-Hounli" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/15-donnees-terrain-3.jpg" alt="Courbes de niveau FBF Gbecon-Hounli">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -824,7 +832,7 @@
                     <!-- 16 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/16-projet-urbain-1.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/16-projet-urbain-1.jpg" alt="Bassin versant de Malanville" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/16-projet-urbain-1.jpg" alt="Bassin versant de Malanville">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -843,7 +851,7 @@
                     <!-- 17 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/17-projet-urbain-2.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/17-projet-urbain-2.jpg" alt="Processus MNT par interpolation TIN" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/17-projet-urbain-2.jpg" alt="Processus MNT par interpolation TIN">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -862,7 +870,7 @@
                     <!-- 18 -->
                     <div class="realisation-card" data-type="image" data-src="img/realisations/18-projet-urbain-3.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/realisations/18-projet-urbain-3.jpg" alt="Occupation du sol et réseau routier de Toffo" loading="lazy">
+                            <img loading="lazy" src="img/realisations/thumbs/18-projet-urbain-3.jpg" alt="Occupation du sol et réseau routier de Toffo">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -1011,7 +1019,7 @@
                     <!-- PDF: analyse-spatiale -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/analyse-spatiale.pdf" data-thumb="img/projets/analyse-spatiale-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/analyse-spatiale-thumb.jpg" alt="Analyse Spatiale" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/analyse-spatiale-thumb.jpg" alt="Analyse Spatiale">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1029,7 +1037,7 @@
                     <!-- PDF: carte-thematique-1 -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/carte-thematique-1.pdf" data-thumb="img/projets/carte-thematique-1-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/carte-thematique-1-thumb.jpg" alt="Carte Thématique" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/carte-thematique-1-thumb.jpg" alt="Carte Thématique">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1047,7 +1055,7 @@
                     <!-- PDF: analyse-sorgon -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/analyse-sorgon.pdf" data-thumb="img/projets/analyse-sorgon-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/analyse-sorgon-thumb.jpg" alt="Analyse Sorgon" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/analyse-sorgon-thumb.jpg" alt="Analyse Sorgon">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1065,7 +1073,7 @@
                     <!-- PDF: modelisation -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/modelisation.pdf" data-thumb="img/projets/modelisation-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/modelisation-thumb.jpg" alt="Modélisation Numérique" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/modelisation-thumb.jpg" alt="Modélisation Numérique">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1083,7 +1091,7 @@
                     <!-- PDF: zones-culture-mais -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/zones-culture-mais.pdf" data-thumb="img/projets/zones-culture-mais-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/zones-culture-mais-thumb.jpg" alt="Zones Favorables à la Culture du Maïs" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/zones-culture-mais-thumb.jpg" alt="Zones Favorables à la Culture du Maïs">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1101,7 +1109,7 @@
                     <!-- PDF: formation-qgis -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/formation-qgis.pdf" data-thumb="img/projets/formation-qgis-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/formation-qgis-thumb.jpg" alt="Formation QGIS" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/formation-qgis-thumb.jpg" alt="Formation QGIS">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1119,7 +1127,7 @@
                     <!-- PDF: ze-commune -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/ze-commune.pdf" data-thumb="img/projets/ze-commune-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/ze-commune-thumb.jpg" alt="Étude de la Commune de Zè" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/ze-commune-thumb.jpg" alt="Étude de la Commune de Zè">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1137,7 +1145,7 @@
                     <!-- PDF: rehabilitation-salle -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/rehabilitation-salle.pdf" data-thumb="img/projets/rehabilitation-salle-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/rehabilitation-salle-thumb.jpg" alt="Réhabilitation Salle des Spectacles" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/rehabilitation-salle-thumb.jpg" alt="Réhabilitation Salle des Spectacles">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1155,7 +1163,7 @@
                     <!-- PDF: sig-dechets -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/sig-dechets.pdf" data-thumb="img/projets/sig-dechets-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/sig-dechets-thumb.jpg" alt="SIG et Points de Regroupement des Déchets" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/sig-dechets-thumb.jpg" alt="SIG et Points de Regroupement des Déchets">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1173,7 +1181,7 @@
                     <!-- PDF: abomey-calavi-pdf -->
                     <div class="realisation-card" data-type="pdf" data-pdf="img/projets/abomey-calavi-pdf.pdf" data-thumb="img/projets/abomey-calavi-pdf-thumb.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/abomey-calavi-pdf-thumb.jpg" alt="Carte Communale d'Abomey-Calavi" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/abomey-calavi-pdf-thumb.jpg" alt="Carte Communale d'Abomey-Calavi">
                             <span class="projet-badge-pdf">PDF</span>
                             <div class="realisation-overlay">
                                 <span class="realisation-zoom-icon">
@@ -1191,7 +1199,7 @@
                     <!-- Image: analyse-haute-resolution -->
                     <div class="realisation-card" data-type="image" data-src="img/projets/analyse-haute-resolution.jpg">
                         <div class="realisation-img-wrap">
-                            <img src="img/projets/analyse-haute-resolution.jpg" alt="Analyse Haute Résolution" loading="lazy">
+                            <img loading="lazy" src="img/projets/thumbs/analyse-haute-resolution.jpg" alt="Analyse Haute Résolution">
                             <span class="projet-type-icon projet-type-img">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </span>
@@ -1218,7 +1226,7 @@
         <div class="lightbox-content">
             <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
             <div class="lightbox-img-container" id="lightboxImgContainer">
-                <img src="" alt="" id="lightboxImg" class="lightbox-img">
+                <img loading="lazy" src="" alt="" id="lightboxImg" class="lightbox-img">
                 <iframe id="lightboxPdf" class="lightbox-pdf" src="" style="display:none;"></iframe>
             </div>
             <div class="lightbox-info" id="lightboxInfo">
@@ -1540,7 +1548,7 @@
             <div class="resume-content reveal">
                 <div class="resume-portrait">
                     <div class="resume-photo-wrap">
-                        <img src="img/geraud-photo.jpeg" alt="Géraud Finangnon AIDOFI">
+                        <img loading="lazy" src="img/geraud-photo.jpeg" alt="Géraud Finangnon AIDOFI">
                     </div>
                 </div>
                 <div class="resume-text">
@@ -1581,6 +1589,6 @@
         </svg>
     </button>
 
-    <script src="js/app.js"></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>

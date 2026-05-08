@@ -5,6 +5,16 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Lazy Image Fade-In ---
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => img.classList.add('loaded'));
+      img.addEventListener('error', () => img.classList.add('loaded'));
+    }
+  });
+
   // --- Reading Progress Bar ---
   const progressBar = document.querySelector('.reading-progress');
   function updateProgress() {
@@ -117,9 +127,18 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // Safety: make all reveal elements visible after 4 seconds (prevents invisible content on slow connections)
+  setTimeout(() => {
+    revealElements.forEach(el => {
+      if (!el.classList.contains('visible')) {
+        el.classList.add('reveal-timeout');
+      }
+    });
+  }, 4000);
 
   // --- Software Card Hover Animation ---
   const softwareCards = document.querySelectorAll('.software-card');
@@ -373,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Cover Canvas Background (subtle gold particles) ---
   const canvas = document.getElementById('coverCanvas');
-  if (canvas) {
+  if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const ctx = canvas.getContext('2d');
     let animationId;
     const particles = [];
@@ -387,7 +406,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', resizeCanvas);
 
     // Create gold particles for dark cover
-    for (let i = 0; i < 70; i++) {
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 20 : 70;
+    for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
