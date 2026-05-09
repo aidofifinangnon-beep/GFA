@@ -1,1594 +1,699 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#1a1a1a">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Géraud Finangnon AIDOFI — Biographie Professionnelle</title>
-    <meta name="description" content="Biographie professionnelle de Géraud Finangnon AIDOFI, Spécialiste en Géomatique Appliquée, SIG, Télédétection et Intelligence Artificielle">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="img/geraud-photo.jpeg">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Inline critical: ensure content is visible even if JS fails -->
-    <style>img{max-width:100%;height:auto}</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Biographie professionnelle de Géraud Finangnon AIDOFI, Géomaticien & Ingénieur SIG">
+  <meta name="theme-color" content="#10B981">
+  <title>Géraud Finangnon AIDOFI | Géomaticien & Ingénieur SIG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Enable JS-dependent features immediately -->
-    <script>document.documentElement.classList.add('js-active');</script>
-    <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
-    <!-- Reading Progress Bar -->
-    <div class="reading-progress" style="width: 0%;"></div>
 
+<!-- Progressive enhancement: ensure content visible without JS -->
+<noscript>
+  <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+</noscript>
+<script>document.documentElement.classList.add('js-active');</script>
 
-    <!-- Table of Contents Toggle Button (top-left corner) -->
-    <button class="toc-toggle-btn" id="tocToggleBtn" aria-label="Sommaire">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-            <line x1="4" y1="6" x2="20" y2="6"/>
-            <line x1="4" y1="12" x2="14" y2="12"/>
-            <line x1="4" y1="18" x2="20" y2="18"/>
-        </svg>
-    </button>
+<!-- Reading Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
 
-    <!-- Table of Contents Overlay -->
-    <div class="toc-overlay" id="tocOverlay"></div>
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut">&#8679;</button>
 
-    <!-- Table of Contents Sidebar (slides from left) -->
-    <aside class="toc-sidebar" id="tocSidebar">
-        <div class="toc-sidebar-header">
-            <div class="toc-sidebar-brand">
-                <div class="toc-brand-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
-                        <path d="M4 6h16M4 12h10M4 18h16"/>
-                    </svg>
-                </div>
-                <h3 class="toc-sidebar-title">Sommaire</h3>
-            </div>
-            <button class="toc-close" id="tocClose" aria-label="Fermer">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-                    <line x1="6" y1="6" x2="18" y2="18"/>
-                    <line x1="18" y1="6" x2="6" y2="18"/>
-                </svg>
-            </button>
+<!-- ============ TOC TOGGLE ============ -->
+<button class="toc-toggle" aria-label="Table des matières">&#9776;</button>
+
+<!-- ============ TOC OVERLAY ============ -->
+<div class="toc-overlay"></div>
+
+<!-- ============ TOC PANEL ============ -->
+<nav class="toc-panel" aria-label="Table des matières">
+  <h3>Sommaire</h3>
+  <ol>
+    <li><a href="#couverture">Couverture</a></li>
+    <li><a href="#chapitre-1">Origines & Parcours</a></li>
+    <li><a href="#chapitre-2">Formation Académique</a></li>
+    <li><a href="#chapitre-3">Compétences SIG & Géomatique</a></li>
+    <li><a href="#chapitre-4">Outils & Technologies</a></li>
+    <li><a href="#chapitre-5">Projets Réalisés</a></li>
+    <li><a href="#chapitre-6">Quelques Réalisations</a></li>
+    <li><a href="#chapitre-7">Dessins & Créativité</a></li>
+    <li><a href="#chapitre-8">Leadership & Engagement</a></li>
+    <li><a href="#chapitre-9">Perspectives & Vision</a></li>
+    <li><a href="#chapitre-10">Mes Attentes</a></li>
+    <li><a href="#chapitre-11">Contact & Liens</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</nav>
+
+<!-- ============ COVER ============ -->
+<header class="cover" id="couverture">
+  <div class="cover-grid"></div>
+  <canvas class="cover-particles" id="particlesCanvas"></canvas>
+  <div class="cover-content">
+    <img src="img/profile.jpg" alt="Géraud Finangnon AIDOFI" class="cover-profile" loading="lazy">
+    <p class="cover-subtitle">Biographie professionnelle</p>
+    <h1>Géraud Finangnon <span>AIDOFI</span></h1>
+    <p class="cover-tagline">Géomaticien & Ingénieur SIG | Construire l'espace, cartographier l'avenir</p>
+    <div class="cover-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Licence Professionnelle en Géomatique | ENSTP Bénin
+    </div>
+  </div>
+  <div class="cover-scroll">
+    <svg viewBox="0 0 24 24"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+  </div>
+</header>
+
+<!-- ============ CHAPITRE 1 | Origines & Parcours ============ -->
+<section class="chapter" id="chapitre-1">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 1</span>
+    <h2 class="reveal">Origines &amp; Parcours</h2>
+    <p class="reveal">
+      Géraud Finangnon AIDOFI est un professionnel béninois dont la trajectoire incarne une vocation précoce pour les sciences de l'information géographique et une détermination sans faille à maîtriser les outils de l'innovation spatiale. Né et élevé au Bénin, il développe très tôt un attrait singulier pour la compréhension des dynamiques territoriales, la modélisation de l'espace et les technologies numériques permettant de transformer des données brutes en connaissances décisionnelles. Cette curiosité naturelle le conduit vers la géomatique, discipline transversale à la croisée de la géographie, de l'informatique et de la topométrie, dans laquelle il s'est distingué par sa rigueur analytique et sa capacité à produire des livrables spatiaux de haute tenue professionnelle.
+    </p>
+    <p class="reveal">
+      Son parcours académique et professionnel se caractérise par une progression méthodique, jalonnée de formations techniques de haut niveau, de missions terrain concrètes et d'engagements qui transcendent le cadre strictement scolaire. Géraud ne se contente pas d'acquérir des compétences : il les opérationnalise, les transmet et les met au service de sa communauté. C'est cette synergie entre expertise technique, engagement citoyen et vision stratégique qui constitue la signature de sa trajectoire professionnelle et personnelle.
+    </p>
+    <p class="reveal">
+      Depuis ses premières manipulations de logiciels SIG jusqu'à ses analyses spatiales avancées et ses missions de terrain, Géraud a édifié un profil complet de géomaticien, apte à intervenir à chaque maillon de la chaîne de traitement des données géographiques : de l'acquisition terrain à la production de cartographies thématiques, en passant par le traitement analytique et la modélisation prédictive. Son histoire est celle d'un jeune Africain qui, par l'excellence et le travail, s'approprie les technologies de l'information géographique pour contribuer au développement territorial de son pays et du continent.
+    </p>
+  </div>
+</section>
+
+<!-- ============ CHAPITRE 2 | Formation Académique ============ -->
+<section class="chapter" id="chapitre-2">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 2</span>
+    <h2 class="reveal">Formation Académique</h2>
+    <p class="reveal">
+      Son parcours académique suit une progression cohérente et maîtrisée. Il débute dans le génie civil, obtenant un baccalauréat technique, puis un Diplôme de Technicien (DT/BTP) en 2023 au Lycée Technique et Professionnel de Kpondéhou, avec la mention Bien pour les deux examens. Cette première étape n'est pas anodine : elle lui donne une compréhension concrète des infrastructures, du terrain et des réalités physiques.
+    </p>
+    <p class="reveal">
+      Mais Géraud ne s'arrête pas à la construction visible. Il cherche à comprendre ce qui organise, structure et optimise les territoires en profondeur. C'est dans cette logique qu'il intègre l'École Nationale Supérieure des Travaux Publics (ENSTP), en Licence SIG &amp; Télédétection depuis septembre 2023. Ce choix marque un tournant décisif : il passe de la construction physique à l'intelligence du territoire par la donnée.
+    </p>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <span class="timeline-year">Depuis 2023</span>
+        <h4 class="timeline-title">Licence SIG &amp; Télédétection</h4>
+        <p class="timeline-desc">École Nationale Supérieure des Travaux Publics (ENSTP), Bénin. Formation approfondie en systèmes d'information géographique, télédétection, topographie, cartographie numérique et analyse spatiale. Un tournant décisif : de la construction physique à l'intelligence du territoire par la donnée.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2023</span>
+        <h4 class="timeline-title">Diplôme de Technicien (DT/BTP) - Mention Bien</h4>
+        <p class="timeline-desc">Lycée Technique et Professionnel de Kpondéhou. Formation en génie civil apportant une compréhension concrète des infrastructures, du terrain et des réalités physiques. Une base solide qui forge sa vision du territoire avant de le maîtriser par la donnée.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">Avant 2023</span>
+        <h4 class="timeline-title">Baccalauréat Technique - Mention Bien</h4>
+        <p class="timeline-desc">Lycée Technique et Professionnel de Kpondéhou. Première étape fondatrice dans le génie civil, posant les bases de la rigueur méthodologique et de la compréhension des structures physiques qui nourriront sa vocation pour les sciences du territoire.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPITRE 3 | Compétences SIG & Géomatique ============ -->
+<section class="chapter" id="chapitre-3">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 3</span>
+    <h2 class="reveal">Compétences SIG &amp; Géomatique</h2>
+    <p class="reveal">
+      Géraud possède un éventail de compétences techniques couvrant l'ensemble de la chaîne géomatique, depuis l'acquisition de données sur le terrain jusqu'à l'analyse spatiale avancée et la production de livrables cartographiques professionnels. Sa maîtrise des outils et méthodes lui permet d'intervenir efficacement sur des projets variés, de l'aménagement du territoire à la gestion environnementale, en passant par l'urbanisme et l'agriculture de précision.
+    </p>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h4>Systèmes d'Information Géographique</h4>
+        <p>Conception, mise en oeuvre et gestion de bases de données géographiques. Analyse spatiale multi-critères, interpolation, zonage et superposition de couches thématiques pour l'aide à la décision territoriale.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Télédétection & Imagerie Satellite</h4>
+        <p>Traitement et classification d'images satellites pour la cartographie de l'occupation du sol, la détection de changements et l'analyse environnementale. Maîtrise des indices spectraux et des méthodes de classification supervisée.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Topographie & Levé de Terrain</h4>
+        <p>Opérations de levé topographique avec stations totales et GPS différentiel. Calculs de coordonnées, implantation et mise en plan. Rigueur dans les procédures de mesure et de contrôle qualité des données terrain.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Cartographie Thématique</h4>
+        <p>Conception de cartes thématiques professionnelles : cartes d'occupation du sol, cartes de vulnérabilité, cartes d'aptitude, cartes d'accessibilité. Respect des standards sémiologiques et de la légende graphique.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Gestion de Bases de Données Spatiales</h4>
+        <p>Structuration et administration de bases de données géographiques. Requêtes spatiales, jointures attributaires, modélisation de données selon les standards OGC et intégration de données multi-sources.</p>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Analyse Spatiale & Modélisation</h4>
+        <p>Modélisation géographique, analyse multi-critères (AMC), analyse de réseau, calculs de zones tampon, interpolation spatiale et production d'indicateurs territoriaux pour la planification et le développement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPITRE 4 | Outils & Technologies ============ -->
+<section class="chapter" id="chapitre-4">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 4</span>
+    <h2 class="reveal">Outils &amp; Technologies</h2>
+    <p class="reveal">
+      La maîtrise des outils technologiques est au coeur du métier de géomaticien. Géraud a développé une expertise avancée sur les principaux logiciels et technologies utilisés dans le domaine de l'information géographique, lui permettant de répondre à une large gamme de besoins professionnels, de l'acquisition terrain à la diffusion de données en ligne.
+    </p>
+
+    <div class="outils-grid">
+      <!-- QGIS -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="36" height="36" rx="4" fill="#589632" opacity=".15"/><path d="M14 34V18l6 6 6-10 8 8v12H14z" fill="#589632"/><circle cx="32" cy="16" r="4" fill="#ee7913"/><path d="M12 36h24" stroke="#589632" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <ul class="toc-list">
-            <li><a href="#origines"><span class="toc-chapter-num">I</span>Origines & Identité</a></li>
-            <li><a href="#parcours"><span class="toc-chapter-num">II</span>Parcours Académique</a></li>
-            <li><a href="#competences"><span class="toc-chapter-num">III</span>Compétences Techniques</a></li>
-            <li><a href="#outils"><span class="toc-chapter-num">IV</span>Outils & Technologies</a></li>
-            <li><a href="#realisations"><span class="toc-chapter-num">★</span>Projets Réalisés</a></li>
-            <li><a href="#experience"><span class="toc-chapter-num">V</span>Expérience Professionnelle</a></li>
-            <li><a href="#positionnement"><span class="toc-chapter-num">VI</span>Positionnement Professionnel</a></li>
-            <li><a href="#leadership"><span class="toc-chapter-num">VII</span>Leadership & Engagements</a></li>
-            <li><a href="#profil"><span class="toc-chapter-num">VIII</span>Profil Personnel & Langues</a></li>
-            <li><a href="#contact"><span class="toc-chapter-num">IX</span>Contact</a></li>
-            <li><a href="#vision"><span class="toc-chapter-num">X</span>Vision & Perspectives</a></li>
-            <li><a href="#resume"><span class="toc-chapter-num">XI</span>Résumé & Perspectives</a></li>
-        </ul>
-    </aside>
-
-    <!-- ===================== COVER PAGE - MODERN DARK ===================== -->
-    <section id="cover" class="cover-dark">
-        <canvas id="coverCanvas"></canvas>
-
-        <!-- Topographic contour SVG pattern -->
-        <div class="cover-topo">
-            <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="500" cy="500" rx="450" ry="450" stroke="#C9A84C" stroke-width="0.5"/>
-                <ellipse cx="500" cy="500" rx="380" ry="380" stroke="#C9A84C" stroke-width="0.5"/>
-                <ellipse cx="500" cy="500" rx="310" ry="310" stroke="#C9A84C" stroke-width="0.5"/>
-                <ellipse cx="500" cy="500" rx="240" ry="240" stroke="#C9A84C" stroke-width="0.5"/>
-                <ellipse cx="500" cy="500" rx="170" ry="170" stroke="#C9A84C" stroke-width="0.5"/>
-                <ellipse cx="500" cy="500" rx="100" ry="100" stroke="#C9A84C" stroke-width="0.5"/>
-                <line x1="500" y1="0" x2="500" y2="1000" stroke="#C9A84C" stroke-width="0.3"/>
-                <line x1="0" y1="500" x2="1000" y2="500" stroke="#C9A84C" stroke-width="0.3"/>
-                <line x1="0" y1="0" x2="1000" y2="1000" stroke="#C9A84C" stroke-width="0.2"/>
-                <line x1="1000" y1="0" x2="0" y2="1000" stroke="#C9A84C" stroke-width="0.2"/>
-            </svg>
+        <h4>QGIS</h4>
+        <p>Logiciel SIG open source de référence. Maîtrise avancée pour l'analyse spatiale, la cartographie thématique, le traitement de données vecteur et raster, les plugins spécialisés et l'automatisation de traitements via Processing Modeler.</p>
+      </div>
+      <!-- ArcGIS / ArcMap -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" fill="#007ac2" opacity=".15"/><ellipse cx="24" cy="24" rx="16" ry="8" stroke="#007ac2" stroke-width="1.5" transform="rotate(-25 24 24)"/><ellipse cx="24" cy="24" rx="16" ry="8" stroke="#007ac2" stroke-width="1.5"/><path d="M24 8v32M8 24h32" stroke="#007ac2" stroke-width="1" opacity=".4"/></svg>
         </div>
-
-        <!-- Gold corner ornaments -->
-        <div class="corner-ornament-dark top-left"></div>
-        <div class="corner-ornament-dark top-right"></div>
-        <div class="corner-ornament-dark bottom-left"></div>
-        <div class="corner-ornament-dark bottom-right"></div>
-
-        <!-- Floating coordinates -->
-        <div class="cover-coords">
-            <span class="coord-label" style="left:5%;top:30%">7.4333° N</span>
-            <span class="coord-label" style="right:5%;top:35%">2.3667° E</span>
-            <span class="coord-label" style="left:12%;bottom:25%">WGS 84</span>
+        <h4>ArcGIS / ArcMap</h4>
+        <p>Suite ESRI pour l'analyse géographique professionnelle. Utilisation d'ArcMap et ArcCatalog pour la gestion de projets SIG, l'analyse spatiale avancée et la production de livrables cartographiques aux standards institutionnels.</p>
+      </div>
+      <!-- Google Earth Pro -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" fill="#4285f4" opacity=".12"/><path d="M24 8a16 16 0 010 32 12 12 0 010-24 8 8 0 010 16 4 4 0 010-8" stroke="#4285f4" stroke-width="2" fill="none"/><circle cx="30" cy="14" r="3" fill="#34a853"/></svg>
         </div>
-
-        <div class="cover-content-dark">
-            <!-- Book type label -->
-            <div class="cover-label-dark">
-                <span class="label-line"></span>
-                <span class="label-text">Biographie Professionnelle</span>
-                <span class="label-line"></span>
-            </div>
-
-            <!-- Photo with gold ring -->
-            <div class="cover-photo-dark">
-                <div class="photo-rotate-ring"></div>
-                <div class="photo-glow-dark"></div>
-                <div class="photo-ring"></div>
-                <div class="photo-circle">
-                    <img src="img/geraud-photo.jpeg" alt="Géraud Finangnon AIDOFI">
-                </div>
-                <div class="photo-diamond"></div>
-            </div>
-
-            <!-- Name -->
-            <h1 class="cover-name-dark">
-                <span class="shimmer-text">GÉRAUD FINANGNON</span>
-            </h1>
-            <h1 class="cover-name-dark surname">AIDOFI</h1>
-
-            <!-- Tagline -->
-            <p class="cover-tagline-dark">Faire parler les données pour guider les décisions</p>
-
-            <!-- Specialty -->
-            <p class="cover-specialty-dark">Spécialiste en Géomatique Appliquée</p>
-
-            <!-- Separator -->
-            <div class="cover-separator-dark"></div>
+        <h4>Google Earth Pro</h4>
+        <p>Visualisation et exploration de données géospatiales. Superposition d'images, création de repères et parcours virtuels, mesure de distances et surfaces, export de données KML/KMZ pour le partage et la communication.</p>
+      </div>
+      <!-- AutoCAD / Covadis -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="2" stroke="#e5102e" stroke-width="2" fill="#e5102e" fill-opacity=".08"/><path d="M14 34L28 14M28 14v8M28 14h-8" stroke="#e5102e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 34h8M14 34v-8" stroke="#e5102e" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
         </div>
-
-        <!-- Bottom gradient fade to white -->
-        <div class="cover-fade-bottom"></div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+        <h4>AutoCAD / Covadis</h4>
+        <p>Dessin assisté par ordinateur appliqué à la topographie. Levé de terrain numérisé, mise en plan de projets d'aménagement, profil en long et en travers, calculs de cubature et implantation de projets de génie civil.</p>
+      </div>
+      <!-- Agisoft Metashape -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M24 8l14 8v16L24 40 10 32V16l14-8z" stroke="#e74c3c" stroke-width="2" fill="#e74c3c" fill-opacity=".08"/><path d="M24 8v16M24 24l14 8M24 24L10 32" stroke="#e74c3c" stroke-width="1.5" opacity=".6"/><path d="M17 12l14 8M17 28l14-8" stroke="#e74c3c" stroke-width="1" opacity=".3"/></svg>
         </div>
-    </section>
-
-    <!-- ===================== CHAPTER I — ORIGINES & IDENTITÉ ===================== -->
-    <section id="origines" class="chapter-section">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre I</span>
-                <h2 class="chapter-title">Origines & Identité</h2>
-                <div class="chapter-title-line"></div>
-            </div>
-
-            <div class="chapter-body reveal">
-                <p class="chapter-paragraph">Né le 23 janvier 2006 à Covè Adogbé, dans le département du Zou au Bénin, Géraud Finangnon AIDOFI appartient à une génération pleinement consciente des enjeux territoriaux, environnementaux et technologiques qui façonnent l'Afrique contemporaine. Son environnement natal, profondément ancré dans les réalités rurales et urbaines du Bénin, lui a offert un terrain d'observation privilégié où les dynamiques d'urbanisation accélérée, la gestion des espaces naturels et l'organisation des territoires se lisent au quotidien avec une évidence qui ne laisse pas indifférent un esprit curieux. C'est dans ce contexte que se forge très tôt chez lui une capacité d'observation aiguisée et une sensibilité particulière à la structuration de l'espace géographique.</p>
-
-                <p class="chapter-paragraph">Là où d'autres voient simplement des lieux de vie, Géraud développe une manière fondamentalement différente d'appréhender le monde : il perçoit des systèmes spatiaux, des interactions géographiques, des données géoréférencées à comprendre et à exploiter. Les paysages du Zou, entre savane et villes en expansion, constituent pour lui une leçon vivante de géographie appliquée. Chaque route, chaque quartier, chaque cours d'eau devient un sujet d'analyse, une donnée à cartographier, un espace à comprendre dans sa complexité et ses interrelations.</p>
-
-                <p class="chapter-paragraph">Cette manière de penser n'est pas le fruit du hasard. Elle révèle déjà un esprit orienté vers l'analyse spatiale, la structuration de l'information géographique et la projection stratégique. C'est l'émergence d'un esprit de bâtisseur, mais aussi de stratège territorial, chez un jeune homme qui pressent que la compréhension fine des territoires constitue la clé du développement durable et de la gouvernance éclairée.</p>
-            </div>
-
-            <!-- Decorative Quote -->
-            <div class="chapter-quote reveal">
-                <p class="quote-text">Percevoir l'espace non pas comme un décor, mais comme un système vivant de données et d'interactions.</p>
-            </div>
+        <h4>Agisoft Metashape</h4>
+        <p>Logiciel de photogrammétrie professionnelle pour la reconstruction 3D à partir de prises de vues aériennes et terrestres. Production de modèles numériques de surface, orthophotographies et nuages de points denses pour la cartographie haute précision.</p>
+      </div>
+      <!-- Pix4D -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M20 12l4-6 4 6" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="12" y="12" width="24" height="6" rx="2" fill="#00b4d8" opacity=".15" stroke="#00b4d8" stroke-width="1.5"/><path d="M16 18v4c0 2 4 4 8 4s8-2 8-4v-4" stroke="#00b4d8" stroke-width="1.5"/><circle cx="24" cy="30" r="6" stroke="#00b4d8" stroke-width="1.5" fill="#00b4d8" fill-opacity=".08"/><path d="M24 27v6M21 30h6" stroke="#00b4d8" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
-    </section>
-
-    <!-- ===================== CHAPTER II — PARCOURS ACADÉMIQUE ===================== -->
-    <section id="parcours" class="chapter-section alternate-bg">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre II</span>
-                <h2 class="chapter-title">Parcours Académique</h2>
-                <div class="chapter-title-line"></div>
-            </div>
-
-            <div class="timeline reveal">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023</div>
-                        <h3 class="timeline-title">Baccalauréat Technique & Diplôme de Technicien BTP</h3>
-                        <p class="timeline-institution">Lycée Technique et Professionnel de Kpondéhou</p>
-                        <p class="timeline-description">Baccalauréat technique obtenu avec Mention Bien, suivi du Diplôme de Technicien (DT/BTP) la même année avec la même distinction. Cette première étape fondatrice lui confère une compréhension concrète des infrastructures, du terrain et des réalités physiques qui sous-tendent tout aménagement. C'est dans cette formation technique qu'il développe le sens du détail, la rigueur du raisonnement spatial et l'exigence de précision qui deviendront les piliers de sa démarche professionnelle. L'acquisition de ces fondamentaux du BTP lui offre une lecture intime du territoire, comprise non pas seulement comme un espace abstrait, mais comme un socle matériel fait de sols, de structures et d'enjeux constructifs.</p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="timeline-dot"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023 → En cours</div>
-                        <h3 class="timeline-title">Licence Professionnelle SIG & Télédétection</h3>
-                        <p class="timeline-institution">École Nationale Supérieure des Travaux Publics (ENSTP)</p>
-                        <p class="timeline-description">Ce choix marque un tournant décisif dans son parcours. Il passe de la construction physique à l'intelligence du territoire par la donnée géospatiale. Il cherche à comprendre ce qui organise, structure et optimise les territoires en profondeur. À l'ENSTP, il acquiert les fondements théoriques et méthodologiques de la géomatique, maîtrise les systèmes d'information géographique et les techniques de télédétection, et apprend à transformer des données brutes en informations décisionnelles. Cette formation constitue le socle de son expertise et le tremplin vers une carrière dédiée à l'intelligence territoriale, où la donnée devient levier de transformation et d'aide à la décision.</p>
-                    </div>
-                </div>
-            </div>
+        <h4>Pix4D</h4>
+        <p>Solution de cartographie par drone pour le traitement d'images aériennes. Génération d'orthophotoplans, de modèles numériques de terrain et de relevés 3D à des fins topographiques, agricoles et d'aménagement du territoire.</p>
+      </div>
+      <!-- ArchiCAD -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M24 10l12 6v16l-12 6-12-6V16l12-6z" stroke="#2196f3" stroke-width="2" fill="#2196f3" fill-opacity=".08"/><path d="M18 22v10M24 18v18M30 22v10" stroke="#2196f3" stroke-width="1.5" stroke-linecap="round"/><path d="M12 16l12 6 12-6M24 22v18" stroke="#2196f3" stroke-width="1.5"/></svg>
         </div>
-    </section>
-
-    <!-- ===================== CHAPTER III — COMPÉTENCES TECHNIQUES ===================== -->
-    <section id="competences" class="chapter-section">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre III</span>
-                <h2 class="chapter-title">Compétences Techniques</h2>
-                <div class="chapter-title-line"></div>
-            </div>
-
-            <div class="skills-grid reveal">
-                <!-- Skill 1 -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <ellipse cx="12" cy="12" rx="10" ry="4"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                    </div>
-                    <h3 class="skill-title">Analyse et interprétation d'images satellitaires</h3>
-                    <p class="skill-description">Maîtrise avancée des plateformes Landsat et Sentinel pour la surveillance environnementale, la détection de changements et l'analyse multi-temporelle des paysages et des territoires.</p>
-                </div>
-
-                <!-- Skill 2 -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 2H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 2v4m0 0H3m6 0h12M3 8v10a2 2 0 0 0 2 2h4m0 0h6m-6 0v4m0-4h6m0 0h4a2 2 0 0 0 2-2V8"/>
-                        </svg>
-                    </div>
-                    <h3 class="skill-title">Cartographie numérique professionnelle</h3>
-                    <p class="skill-description">Production de cartes thématiques et topographiques aux normes internationales, avec une attention particulière portée à la sémiologie graphique et à la lisibilité des représentations spatiales.</p>
-                </div>
-
-                <!-- Skill 3 -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="7" height="7" rx="1"/>
-                            <rect x="14" y="3" width="7" height="7" rx="1"/>
-                            <rect x="3" y="14" width="7" height="7" rx="1"/>
-                            <rect x="14" y="14" width="7" height="7" rx="1"/>
-                        </svg>
-                    </div>
-                    <h3 class="skill-title">Analyse spatiale raster et vectorielle</h3>
-                    <p class="skill-description">Manipulation avancée de données géospatiales pour l'extraction de connaissances territoriales, la modélisation de phénomènes spatiaux et l'aide à la décision stratégique.</p>
-                </div>
-
-                <!-- Skill 4 -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 22h20L12 2z"/>
-                            <path d="M12 10v6m0 2v1"/>
-                        </svg>
-                    </div>
-                    <h3 class="skill-title">Modélisation numérique du terrain (MNT)</h3>
-                    <p class="skill-description">Création de modèles tri-dimensionnels pour l'analyse géomorphologique, la simulation environnementale et l'étude des dynamiques paysagères.</p>
-                </div>
-
-                <!-- Skill 5 -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <ellipse cx="12" cy="5" rx="9" ry="3"/>
-                            <path d="M21 5v6c0 1.66-4.03 3-9 3s-9-1.34-9-3V5"/>
-                            <path d="M21 11v6c0 1.66-4.03 3-9 3s-9-1.34-9-3v-6"/>
-                        </svg>
-                    </div>
-                    <h3 class="skill-title">Structuration et gestion de géodatabases</h3>
-                    <p class="skill-description">Conception et administration de bases de données géospatiales relationnelles pour une gestion efficiente, pérenne et interopérable de l'information territoriale.</p>
-                </div>
-
-                <!-- Skill 6 -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="skill-title">Intégration de données multi-sources</h3>
-                    <p class="skill-description">Fusion harmonieuse de données terrain, drone et satellite pour une compréhension holistique des territoires et une restitution intégrale des réalités spatiales.</p>
-                </div>
-            </div>
-
-            <!-- LOGICIELS MAÎTRISÉS -->
-            <div class="software-section reveal">
-                <div class="software-section-header">
-                    <div class="software-header-line"></div>
-                    <h3 class="software-section-title">Logiciels Maîtrisés</h3>
-                    <div class="software-header-line"></div>
-                </div>
-
-                <div class="software-showcase">
-                    <!-- SIG & Géomatique -->
-                    <div class="software-category">
-                        <div class="software-category-label">Géomatique & SIG</div>
-                        <div class="software-items-row">
-                            <div class="software-card" data-software="arcgis">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M16 32V18l8 6-8 8z" fill="#C9A84C" opacity="0.3"/>
-                                        <path d="M24 26l8-8v14" stroke="#C9A84C" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="24" cy="24" r="3" fill="#C9A84C"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">ArcGIS</span>
-                            </div>
-                            <div class="software-card" data-software="qgis">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <rect x="14" y="14" width="20" height="20" rx="2" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M14 28h20M24 14v20" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-                                        <circle cx="20" cy="20" r="3" fill="#C9A84C" opacity="0.4"/>
-                                        <circle cx="30" cy="30" r="3" fill="#C9A84C" opacity="0.4"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">QGIS</span>
-                            </div>
-                            <div class="software-card" data-software="surfer">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M12 30c4-8 8-12 12-10s8 2 12-6" stroke="#C9A84C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                                        <path d="M12 24c4-6 8-8 12-6s8 0 12-4" stroke="#C9A84C" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
-                                        <path d="M12 36c4-10 8-16 12-14s8 4 12-8" stroke="#C9A84C" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">Surfer</span>
-                            </div>
-                            <div class="software-card" data-software="envi">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <ellipse cx="24" cy="24" rx="12" ry="6" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <circle cx="24" cy="24" r="3" fill="#C9A84C" opacity="0.4"/>
-                                        <path d="M24 4v8M24 36v8" stroke="#C9A84C" stroke-width="1" opacity="0.3"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">ENVI</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Dessin & Topographie -->
-                    <div class="software-category">
-                        <div class="software-category-label">Dessin & Topographie</div>
-                        <div class="software-items-row">
-                            <div class="software-card" data-software="autocad">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M14 34V14h20" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M14 34l10-10 6 4 4-14" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">AutoCAD</span>
-                            </div>
-                            <div class="software-card" data-software="covadis">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M14 14h20v20H14z" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M14 14l20 20M34 14L14 34" stroke="#C9A84C" stroke-width="1" opacity="0.4"/>
-                                        <circle cx="24" cy="24" r="5" stroke="#C9A84C" stroke-width="1.5" fill="#C9A84C" fill-opacity="0.15"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">Covadis</span>
-                            </div>
-                            <div class="software-card" data-software="archicad">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M24 10l10 6v16l-10 6-10-6V16l10-6z" stroke="#C9A84C" stroke-width="1.5" fill="#C9A84C" fill-opacity="0.1" stroke-linejoin="round"/>
-                                        <path d="M24 10v28M14 16l20 12M14 28l20-12" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">ArchiCAD</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Bureautique -->
-                    <div class="software-category">
-                        <div class="software-category-label">Bureautique</div>
-                        <div class="software-items-row">
-                            <div class="software-card" data-software="word">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <rect x="14" y="12" width="20" height="24" rx="2" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M18 18h12M18 22h12M18 26h8" stroke="#C9A84C" stroke-width="1" opacity="0.6" stroke-linecap="round"/>
-                                        <text x="24" y="36" font-size="8" fill="#C9A84C" text-anchor="middle" font-weight="bold" font-family="serif">W</text>
-                                    </svg>
-                                </div>
-                                <span class="software-name">Word</span>
-                            </div>
-                            <div class="software-card" data-software="excel">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <rect x="14" y="12" width="20" height="24" rx="2" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <path d="M14 18h20M14 24h20M14 30h20M22 12v24" stroke="#C9A84C" stroke-width="1" opacity="0.5"/>
-                                        <text x="24" y="36" font-size="8" fill="#C9A84C" text-anchor="middle" font-weight="bold" font-family="serif">X</text>
-                                    </svg>
-                                </div>
-                                <span class="software-name">Excel</span>
-                            </div>
-                            <div class="software-card" data-software="powerpoint">
-                                <div class="software-icon-wrap">
-                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="24" cy="24" r="20" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <rect x="14" y="12" width="20" height="24" rx="2" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
-                                        <rect x="18" y="16" width="12" height="8" rx="1" stroke="#C9A84C" stroke-width="1" fill="#C9A84C" fill-opacity="0.15"/>
-                                        <circle cx="24" cy="32" r="3" fill="#C9A84C" opacity="0.4"/>
-                                    </svg>
-                                </div>
-                                <span class="software-name">PowerPoint</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h4>ArchiCAD</h4>
+        <p>Logiciel de modélisation BIM (Building Information Modeling) pour la conception architecturale. Création de plans de construction, de modèles 3D interactifs et de documentation technique pour les projets de génie civil et d'urbanisme.</p>
+      </div>
+      <!-- ENVI -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="24" rx="3" fill="#8e44ad" fill-opacity=".1" stroke="#8e44ad" stroke-width="1.5"/><path d="M8 22h32" stroke="#8e44ad" stroke-width="1" opacity=".4"/><path d="M8 28h32" stroke="#8e44ad" stroke-width="1" opacity=".3"/><path d="M14 36V12" stroke="#8e44ad" stroke-width="1" opacity=".4"/><path d="M14 32c4-8 8 4 12-4s8 6 12-2" stroke="#8e44ad" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="34" cy="18" r="3" fill="#e74c3c" opacity=".6"/></svg>
         </div>
-    </section>
-
-    <!-- ===================== CHAPTER IV — OUTILS & TECHNOLOGIES ===================== -->
-    <section id="outils" class="chapter-section alternate-bg">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre IV</span>
-                <h2 class="chapter-title">Outils & Technologies</h2>
-                <div class="chapter-title-line"></div>
-            </div>
-
-            <div class="tools-grid reveal">
-                <!-- SIG -->
-                <div class="tool-category-card">
-                    <div class="tool-category-header">
-                        <div class="tool-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M9 2H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 2v4m0 0H3m6 0h12M3 8v10a2 2 0 0 0 2 2h4m0 0h6m-6 0v4m0-4h6m0 0h4a2 2 0 0 0 2-2V8"/>
-                            </svg>
-                        </div>
-                        <h3 class="tool-category-title">SIG</h3>
-                    </div>
-                    <div class="tool-items">
-                        <span class="tool-item">ArcMap</span>
-                        <span class="tool-item">QGIS</span>
-                    </div>
-                </div>
-
-                <!-- Télédétection -->
-                <div class="tool-category-card">
-                    <div class="tool-category-header">
-                        <div class="tool-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <ellipse cx="12" cy="12" rx="10" ry="4"/>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                        </div>
-                        <h3 class="tool-category-title">Télédétection</h3>
-                    </div>
-                    <div class="tool-items">
-                        <span class="tool-item">ENVI</span>
-                        <span class="tool-item">Google Earth</span>
-                    </div>
-                </div>
-
-                <!-- Drone & Photogrammétrie -->
-                <div class="tool-category-card">
-                    <div class="tool-category-header">
-                        <div class="tool-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5"/>
-                                <path d="M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <h3 class="tool-category-title">Données et Photogrammétrie</h3>
-                    </div>
-                    <div class="tool-items">
-                        <span class="tool-item">Pix4D</span>
-                        <span class="tool-item">Agisoft</span>
-                    </div>
-                </div>
-
-                <!-- Cartographie Web -->
-                <div class="tool-category-card">
-                    <div class="tool-category-header">
-                        <div class="tool-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="tool-category-title">Cartographie Web</h3>
-                    </div>
-                    <div class="tool-items">
-                        <span class="tool-item">Leaflet</span>
-                        <span class="tool-item">Mapbox</span>
-                        <span class="tool-item">GeoServer</span>
-                        <span class="tool-item">OpenLayers</span>
-                    </div>
-                </div>
-            </div>
+        <h4>ENVI</h4>
+        <p>Logiciel de traitement d'images de télédétection de référence. Analyse spectrale avancée, classification d'images satellites, extraction d'informations thématiques, calcul d'indices de végétation et analyse multitemporelle pour le suivi environnemental.</p>
+      </div>
+      <!-- GPS & Station Totale -->
+      <div class="outil-card reveal">
+        <div class="outil-icon">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="20" r="10" stroke="#10b981" stroke-width="2" fill="#10b981" fill-opacity=".08"/><path d="M24 14v12M20 18h8" stroke="#10b981" stroke-width="2" stroke-linecap="round"/><path d="M24 30v10M18 40h12" stroke="#10b981" stroke-width="2" stroke-linecap="round"/><path d="M14 36l4 4M34 36l-4 4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
         </div>
-    </section>
+        <h4>GPS & Station Totale</h4>
+        <p>Matériel de terrain pour la collecte de données géographiques précises. Utilisation de récepteurs GPS différentiels et de stations totales pour les levés topographiques, les enquêtes de terrain et le géoréférencement.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===================== PROJET RÉALISÉ ===================== -->
-    <section id="realisations" class="chapter-section">
-        <div class="chapter-container realisations-wide">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Portfolio</span>
-                <h2 class="chapter-title">Projet Réalisé</h2>
-                <div class="chapter-title-line"></div>
-            </div>
+<!-- ============ CHAPITRE 5 | Projets Réalisés ============ -->
+<section class="chapter" id="chapitre-5">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 5</span>
+    <h2 class="reveal">Projets Réalisés</h2>
+    <p class="reveal">
+      Cette section présente les principaux projets techniques réalisés par Géraud dans le cadre de sa formation et de ses missions professionnelles. Chaque projet illustre sa capacité à appliquer les outils et méthodes de la géomatique à des problématiques réelles. Cliquez sur un projet pour le visualiser, ou utilisez le bouton de téléchargement pour enregistrer le document.
+    </p>
 
-            <p class="projet-section-intro reveal">Découvrez l'ensemble des projets, documents et productions réalisés par Géraud Finangnon AIDOFI au cours de son parcours en géomatique. Chaque réalisation témoigne d'une compétence technique maîtrisée et d'une approche rigoureuse de l'analyse spatiale. Cliquez sur un projet pour le visualiser en détail.</p>
+    <div class="projects-grid">
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/donnees-terrain-1.pdf"
+           data-title="Données Terrain 1">
+        <a href="img/projets/donnees-terrain-1.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/donnees-terrain-1-thumb.jpg" alt="Données Terrain 1" class="project-card-thumb" loading="lazy">
+      </div>
 
-            
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/analyse-sorgon.pdf"
+           data-title="Analyse Spatio-temporelle Gbècon-Hounli">
+        <a href="img/projets/analyse-sorgon.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/analyse-sorgon-thumb.jpg" alt="Analyse Spatio-temporelle Gbècon-Hounli" class="project-card-thumb" loading="lazy">
+      </div>
 
-            <!-- ===== CATÉGORIE : Productions Cartographiques ===== -->
-            <div class="projet-category reveal">
-                <div class="projet-category-header">
-                    <div class="projet-category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 2v4m0 0H3m6 0h12M3 8v10a2 2 0 0 0 2 2h4m0 0h6m-6 0v4m0-4h6m0 0h4a2 2 0 0 0 2-2V8"/></svg>
-                    </div>
-                    <h3 class="projet-category-title">Productions Cartographiques</h3>
-                </div>
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/rehabilitation-salle.pdf"
+           data-title="Réhabilitation de Salle">
+        <a href="img/projets/rehabilitation-salle.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/rehabilitation-salle-thumb.jpg" alt="Réhabilitation de Salle" class="project-card-thumb" loading="lazy">
+      </div>
 
-                <div class="realisations-grid">
-                    <!-- 01 - Existing realisations -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/01-abomey-calavi.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/01-abomey-calavi.jpg" alt="Carte de la commune d'Abomey-Calavi">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Carte communale d'Abomey-Calavi</h4>
-                            <p class="realisation-desc">Carte géomatique représentant la situation géographique de la commune d'Abomey-Calavi, illustrant ses limites administratives, infrastructures routières, plans d'eau et forêts.</p>
-                        </div>
-                    </div>
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/analyse-spatiale.pdf"
+           data-title="Analyse Spatiale">
+        <a href="img/projets/analyse-spatiale.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/analyse-spatiale-thumb.jpg" alt="Analyse Spatiale" class="project-card-thumb" loading="lazy">
+      </div>
 
-                    <!-- 02 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/02-founougou.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/02-founougou.jpg" alt="Carte hypsométrique de Founougo">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Carte hypsométrique de Founougo</h4>
-                            <p class="realisation-desc">Carte hypsométrique représentant la variation des altitudes du relief de l'arrondissement de Founougo (223 à 356 m), avec colorimétrie distinguant les zones de relief et les limites administratives.</p>
-                        </div>
-                    </div>
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/sig-dechets.pdf"
+           data-title="SIG et Déchets">
+        <a href="img/projets/sig-dechets.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/sig-dechets-thumb.jpg" alt="SIG Déchets" class="project-card-thumb" loading="lazy">
+      </div>
 
-                    <!-- 03 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/03-carte-thematique-1.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/03-carte-thematique-1.jpg" alt="Modèle numérique de surface de Bopa">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Modèle numérique de surface de Bopa</h4>
-                            <p class="realisation-desc">Carte 3D du modèle numérique de surface de la commune de Bopa, avec légende de couleurs pour les altitudes, système de projection et informations sur la source.</p>
-                        </div>
-                    </div>
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/modelisation.pdf"
+           data-title="Modélisation Géographique">
+        <a href="img/projets/modelisation.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/modelisation-thumb.jpg" alt="Modélisation" class="project-card-thumb" loading="lazy">
+      </div>
 
-                    <!-- 04 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/04-carte-thematique-2.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/04-carte-thematique-2.jpg" alt="Carte de situation Atlas-GIS">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Carte de localisation Atlas-GIS SARL</h4>
-                            <p class="realisation-desc">Carte de situation réalisée par Atlas-GIS SARL, localisant le cabinet dans le 11e arrondissement de Cotonou avec symboles et légendes détaillant infrastructures et itinéraires.</p>
-                        </div>
-                    </div>
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/culture-mais.pdf"
+           data-title="Zones Favorables Culture du Maïs">
+        <a href="img/projets/culture-mais.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/culture-mais-thumb.jpg" alt="Culture du maïs" class="project-card-thumb" loading="lazy">
+      </div>
 
-                    <!-- 05 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/05-analyse-spatiale-1.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/05-analyse-spatiale-1.jpg" alt="Accessibilité aux centres de santé - Djidja">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Accessibilité aux centres de santé de Djidja</h4>
-                            <p class="realisation-desc">Carte illustrant l'accessibilité aux centres de santé dans la commune de Djidja, distinguant les zones par niveaux de difficulté avec légende colorée et diagramme circulaire.</p>
-                        </div>
-                    </div>
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/abomey-calavi.pdf"
+           data-title="Abomey-Calavi">
+        <a href="img/projets/abomey-calavi.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/abomey-calavi-thumb.jpg" alt="Abomey-Calavi" class="project-card-thumb" loading="lazy">
+      </div>
 
-                    <!-- 06 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/06-analyse-spatiale-2.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/06-analyse-spatiale-2.jpg" alt="Accessibilité aux collèges - Tchaourou">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Accessibilité aux collèges de Tchaourou</h4>
-                            <p class="realisation-desc">Carte d'accessibilité au collège d'enseignement général dans la commune de Tchaourou, avec zones colorées selon la distance et symboles pour les établissements.</p>
-                        </div>
-                    </div>
+      <div class="project-card reveal"
+           data-lightbox="projets"
+           data-type="pdf"
+           data-src="img/projets/formation-qgis.pdf"
+           data-title="Formation QGIS">
+        <a href="img/projets/formation-qgis.pdf" download class="project-card-download" title="Télécharger le PDF" onclick="event.stopPropagation();">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+        <img src="img/projets/formation-qgis-thumb.jpg" alt="Formation QGIS" class="project-card-thumb" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <!-- 07 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/07-carte-topographique.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/07-carte-topographique.jpg" alt="Répartition de la population du Bénin">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Population et densité du Bénin</h4>
-                            <p class="realisation-desc">Carte de la République du Bénin illustrant la répartition de la population (2013) et la densité par département, avec légendes et projection EPSG 32631.</p>
-                        </div>
-                    </div>
+<!-- ============ CHAPITRE 6 | Quelques Réalisations ============ -->
+<section class="chapter" id="chapitre-6">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 6</span>
+    <h2 class="reveal">Quelques Réalisations</h2>
+    <p class="reveal">
+      Cette galerie présente un aperçu des productions cartographiques et des travaux terrain de Géraud. Ces images illustrent la diversité de ses interventions : cartes d'occupation du sol, analyses spatiales, levés topographiques et productions graphiques liées à ses missions. Cliquez sur une image pour l'agrandir et en découvrir les détails.
+    </p>
 
-                    <!-- 08 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/08-sig-produit-1.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/08-sig-produit-1.jpg" alt="Plan de masse école Gbecon-Hounli">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Plan de masse de l'école de Gbecon-Hounli</h4>
-                            <p class="realisation-desc">Plan de masse de l'école primaire publique de Gbecon-Hounli, présentant la disposition des bâtiments, arbres et infrastructures sur le site, avec légende et échelle.</p>
-                        </div>
-                    </div>
+    <div class="realisations-grid">
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/analyse-haute-resolution.jpg" data-title="Analyse Haute Résolution">
+        <img src="img/realisations/analyse-haute-resolution-thumb.jpg" alt="Analyse Haute Résolution" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/founougo.jpg" data-title="Carte de Founougo">
+        <img src="img/realisations/founougo-thumb.jpg" alt="Carte de Founougo" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/abomey-calavi.jpg" data-title="Abomey-Calavi">
+        <img src="img/realisations/abomey-calavi-thumb.jpg" alt="Abomey-Calavi" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-2.jpg" data-title="Analyse spatiale multicritères">
+        <img src="img/realisations/realisation-2-thumb.jpg" alt="Analyse spatiale multicritères" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-3.jpg" data-title="Carte de vulnérabilité">
+        <img src="img/realisations/realisation-3-thumb.jpg" alt="Carte de vulnérabilité" loading="lazy">
+      </div>
 
-                    <!-- 09 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/09-sig-produit-2.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/09-sig-produit-2.jpg" alt="Densité de population de Lokossa">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Densité et effectif de Lokossa</h4>
-                            <p class="realisation-desc">Carte de densité et d'effectif de la population de la commune de Lokossa, avec couleurs et tailles de points indiquant la densité et l'effectif, incluant légendes et limites administratives.</p>
-                        </div>
-                    </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-5.jpg" data-title="Classification satellite">
+        <img src="img/realisations/realisation-5-thumb.jpg" alt="Classification satellite" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-6.jpg" data-title="Plan de lotissement">
+        <img src="img/realisations/realisation-6-thumb.jpg" alt="Plan de lotissement" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-7.jpg" data-title="Analyse de réseau">
+        <img src="img/realisations/realisation-7-thumb.jpg" alt="Analyse de réseau" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-8.jpg" data-title="SIG environnemental">
+        <img src="img/realisations/realisation-8-thumb.jpg" alt="SIG environnemental" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-9.jpg" data-title="Modèle numérique de terrain">
+        <img src="img/realisations/realisation-9-thumb.jpg" alt="Modèle numérique de terrain" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-10.jpg" data-title="Carte d'accessibilité">
+        <img src="img/realisations/realisation-10-thumb.jpg" alt="Carte d'accessibilité" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-11.jpg" data-title="Carte pédologique">
+        <img src="img/realisations/realisation-11-thumb.jpg" alt="Carte pédologique" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-12.jpg" data-title="Télédétection urbaine">
+        <img src="img/realisations/realisation-12-thumb.jpg" alt="Télédétection urbaine" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-13.jpg" data-title="Gestion des déchets">
+        <img src="img/realisations/realisation-13-thumb.jpg" alt="Gestion des déchets" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-14.jpg" data-title="Zones agricoles favorables">
+        <img src="img/realisations/realisation-14-thumb.jpg" alt="Zones agricoles favorables" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-15.jpg" data-title="Plan d'urbanisme">
+        <img src="img/realisations/realisation-15-thumb.jpg" alt="Plan d'urbanisme" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-16.jpg" data-title="Infrastructure géodésique">
+        <img src="img/realisations/realisation-16-thumb.jpg" alt="Infrastructure géodésique" loading="lazy">
+      </div>
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/realisation-17.jpg" data-title="Rapport de terrain">
+        <img src="img/realisations/realisation-17-thumb.jpg" alt="Rapport de terrain" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <!-- 10 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/10-levé-topo.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/10-levé-topo.jpg" alt="Surfaces en eau du lac Nokoué - NDWI">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Détection NDWI du lac Nokoué</h4>
-                            <p class="realisation-desc">Carte réalisée par GeoInspire représentant les surfaces en eau du lac Nokoué via l'indice NDWI, distinguant les surfaces en eau des autres surfaces, avec toponymes et légende.</p>
-                        </div>
-                    </div>
+<!-- ============ CHAPITRE 7 | Dessins & Créativité ============ -->
+<section class="chapter" id="chapitre-7">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 7</span>
+    <h2 class="reveal">Dessins &amp; Créativité</h2>
+    <p class="reveal">
+      Au-delà de la rigueur technique, Géraud cultive une sensibilité artistique qui se manifeste à travers le dessin à la main. Cette pratique créative développe son sens de l'observation, sa précision gestuelle et sa capacité à représenter l'espace, des qualités qui nourrissent directement son approche cartographique et sa compréhension de la géométrie du paysage. Le dessin est pour lui un langage complémentaire à la carte, une manière d'appréhender le territoire par l'intuition et l'esthétique avant de le quantifier et de le modéliser.
+    </p>
 
-                    <!-- 11 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/11-cartographie-1.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/11-cartographie-1.jpg" alt="Occupation du sol et réseau routier de Kandi">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Occupation du sol de Kandi</h4>
-                            <p class="realisation-desc">Carte présentant l'occupation du sol et le réseau routier de la commune de Kandi au Bénin, avec communes limitrophes, légende et échelle.</p>
-                        </div>
-                    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" data-gallery="dessins" data-src="img/dessins/dessin-1.jpg" data-title="Dessin à la main 1">
+        <img src="img/dessins/dessin-1-thumb.jpg" alt="Dessin 1" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" data-gallery="dessins" data-src="img/dessins/dessin-2.jpg" data-title="Dessin à la main 2">
+        <img src="img/dessins/dessin-2-thumb.jpg" alt="Dessin 2" loading="lazy">
+      </div>
+      <div class="gallery-item reveal" data-gallery="dessins" data-src="img/dessins/dessin-3.jpg" data-title="Dessin à la main 3">
+        <img src="img/dessins/dessin-3-thumb.jpg" alt="Dessin 3" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <!-- 12 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/12-cartographie-2.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/12-cartographie-2.jpg" alt="Unités pédologiques de Toffo">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Unités pédologiques de Toffo</h4>
-                            <p class="realisation-desc">Carte de répartition des unités pédologiques de la commune de Toffo, illustrant la diversité des sols via une légende colorée et des toponymes.</p>
-                        </div>
-                    </div>
+<!-- ============ CHAPITRE 8 | Leadership & Engagement ============ -->
+<section class="chapter" id="chapitre-8">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 8</span>
+    <h2 class="reveal">Leadership &amp; Engagement</h2>
+    <p class="reveal">
+      En parallèle de son parcours académique, Géraud développe une dimension humaine et sociale forte. Au-delà de la maîtrise des outils SIG et des techniques de terrain, il cultive les soft skills qui distinguent un professionnel d'excellence : la capacité à piloter des missions stratégiques, à communiquer avec impact, à s'engager pour l'intérêt collectif et à maintenir une discipline de fer dans l'effort. Ces compétences comportementales, forgées dans l'action associative et sportive, sont les piliers invisibles d'une carrière technique réussie.
+    </p>
 
-                    <!-- 13 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/13-donnees-terrain-1.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/13-donnees-terrain-1.jpg" alt="Représentation 3D Fédération Béninoise du Football">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Modèle 3D du site de la FBF</h4>
-                            <p class="realisation-desc">Représentation 3D du site de la Fédération Béninoise du Football à Gbecon-Hounli, avec topographie colorée selon l'altitude et coordonnées géographiques.</p>
-                        </div>
-                    </div>
+    <div class="leadership-grid">
+      <div class="leadership-card reveal">
+        <div class="card-icon">&#9733;</div>
+        <h4>Chargé de Mission, <span class="gold">FEUA</span> (2025 - 2026)</h4>
+        <p>
+          Au sein de la Fédération des Étudiants Universitaires d'Abomey-Calavi, Géraud assume des responsabilités stratégiques de haut niveau. Il pilote la planification et le suivi des dossiers institutionnels, coordonne les actions entre les différentes commissions et veille à l'alignement des objectifs fédéraux avec les réalités du terrain étudiant. Ce rôle exige une rigueur de gestion de projet, une capacité de synthèse et une aptitude à la négociation multipartite, des compétences directement transposables à la conduite de projets géomatiques d'envergure.
+        </p>
+      </div>
 
-                    <!-- 14 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/14-donnees-terrain-2.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/14-donnees-terrain-2.jpg" alt="Occupation du sol de Covè">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Occupation du sol de Covè</h4>
-                            <p class="realisation-desc">Carte d'occupation du sol de la commune de Covè présentant les différents types de couverture terrestre (forêt dense, savane, agglomération) avec légende et projection.</p>
-                        </div>
-                    </div>
+      <div class="leadership-card reveal">
+        <div class="card-icon">&#9993;</div>
+        <h4>Chargé de Communication, <span class="gold">ENSTP</span></h4>
+        <p>
+          À l'École Nationale des Travaux Publics, Géraud est chargé de la stratégie de communication. Il conçoit les supports de diffusion, pilote les canaux d'information et assure la cohérence du message institutionnel. Cette fonction développe ses compétences en rédaction technique, en conception visuelle et en gestion de l'information, des savoir-faire essentiels pour produire des rapports cartographiques percutants, des présentations claires pour les décideurs et des livrables SIG qui communiquent efficacement les résultats d'analyse spatiale.
+        </p>
+      </div>
 
-                    <!-- 15 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/15-donnees-terrain-3.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/15-donnees-terrain-3.jpg" alt="Courbes de niveau FBF Gbecon-Hounli">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Courbes de niveau du site FBF</h4>
-                            <p class="realisation-desc">Carte topographique représentant les courbes de niveau du site de la Fédération Béninoise du Football à Gbecon-Hounli, avec colorimétrie indiquant les altitudes.</p>
-                        </div>
-                    </div>
+      <div class="leadership-card reveal">
+        <div class="card-icon">&#9829;</div>
+        <h4>Engagement Solidaire, <span class="gold">Léo Club</span></h4>
+        <p>
+          L'implication de Géraud au sein du Léo Club traduit une conviction profonde : l'expertise technique ne prend tout son sens que lorsqu'elle est mise au service de la communauté. Ce réseau de jeunes leaders lui apprend l'écoute des besoins sociaux, l'organisation d'actions collectives et la mobilisation de ressources humaines et matérielles autour de projets solidaires. Ces compétences de coordination et de leadership collaboratif enrichissent sa capacité à animer des équipes pluridisciplinaires dans le cadre de projets de terrain géomatique.
+        </p>
+      </div>
 
-                    <!-- 16 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/16-projet-urbain-1.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/16-projet-urbain-1.jpg" alt="Bassin versant de Malanville">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Bassin versant de Malanville</h4>
-                            <p class="realisation-desc">Carte morpho-hydrographique présentant le principal bassin versant de la commune de Malanville, avec altitudes colorées, cours d'eau, arrondissements et limite communale.</p>
-                        </div>
-                    </div>
+      <div class="leadership-card reveal">
+        <div class="card-icon">&#10010;</div>
+        <h4>Engagement Solidaire, <span class="gold">Croix-Rouge Universitaire</span></h4>
+        <p>
+          L'engagement à la Croix-Rouge universitaire renforce chez Géraud une éthique de responsabilité et de solidarité qui guide son approche professionnelle. La rigueur opérationnelle exigée dans les interventions humanitaires, à savoir réactivité, précision logistique, travail sous pression, forge les mêmes qualités indispensables sur le terrain géomatique : capacité à réagir rapidement face aux imprévus, rigueur dans la collecte et le traitement de données critiques, et sens du service public qui motive le géomaticien engagé au service du développement territorial.
+        </p>
+      </div>
 
-                    <!-- 17 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/17-projet-urbain-2.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/17-projet-urbain-2.jpg" alt="Processus MNT par interpolation TIN">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Processus MNT par interpolation TIN</h4>
-                            <p class="realisation-desc">Illustration du processus de création d'un modèle numérique de terrain à partir d'un maillage de points altimétriques via l'interpolation TIN, générant des courbes de niveau et un MNT coloré.</p>
-                        </div>
-                    </div>
-
-                    <!-- 18 -->
-                    <div class="realisation-card" data-type="image" data-src="img/realisations/18-projet-urbain-3.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/realisations/thumbs/18-projet-urbain-3.jpg" alt="Occupation du sol et réseau routier de Toffo">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Occupation du sol et routes de Toffo</h4>
-                            <p class="realisation-desc">Carte présentant l'occupation du sol et le réseau routier de la commune de Toffo, avec couleurs codant les types de terrain et les routes classées par importance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== CATÉGORIE : Dessin Topographique ===== -->
-            <div class="projet-category reveal">
-                <div class="projet-category-header">
-                    <div class="projet-category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                    </div>
-                    <h3 class="projet-category-title">Dessin Topographique</h3>
-                </div>
-
-                <div class="realisations-grid">
-                    <!-- Plan de lotissement de Sarete -->
-                    <div class="realisation-card" data-type="image" data-src="img/dessins/plan-lotissement-sarete.jpeg">
-                        <div class="realisation-img-wrap">
-                            <img src="img/dessins/plan-lotissement-sarete.jpeg" alt="Plan de Lotissement de Sarète" loading="lazy">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Plan de Lotissement de Sarète</h4>
-                            <p class="realisation-desc">Plan de morcellement et lotissement de Sarète réalisé à la main, avec délimitation des parcelles, indication des voies (Rue de la Colline), coordonnées géométriques et échelle 1/1000. Ce plan illustre la maîtrise des règles de dessin technique applicables en urbanisme et aménagement foncier.</p>
-                        </div>
-                    </div>
-
-                    <!-- Construction géométrique -->
-                    <div class="realisation-card" data-type="image" data-src="img/dessins/construction-geometrique.jpeg">
-                        <div class="realisation-img-wrap">
-                            <img src="img/dessins/construction-geometrique.jpeg" alt="Construction Géométrique" loading="lazy">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Construction Géométrique</h4>
-                            <p class="realisation-desc">Dessin technique à la main illustrant des constructions géométriques complexes : polygones, cercles concentriques, lignes de référence et axes de symétrie. Réalisé à l'échelle 1/500, ce travail démontre la rigueur et la précision requises dans le traçage manuel des figures géométriques et la géométrie descriptive.</p>
-                        </div>
-                    </div>
-
-                    <!-- Propriété de Bohicon -->
-                    <div class="realisation-card" data-type="image" data-src="img/dessins/propriete-bohicon.jpeg">
-                        <div class="realisation-img-wrap">
-                            <img src="img/dessins/propriete-bohicon.jpeg" alt="Propriété de Bohicon" loading="lazy">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Plan de Propriété de Bohicon</h4>
-                            <p class="realisation-desc">Plan cadastral de propriété de la ville de Bohicon réalisé à la main, avec délimitation précise des parcelles, dimensions cotées, identification des bâtiments (atelier, cour), voies d'accès (Route de la Palmeraie) et tableau de coordonnées. Échelle 1/100, ce plan respecte les règles fondamentales du dessin cadastral manuel.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-            <!-- ===== CATÉGORIE : Liens ===== -->
-            <div class="projet-category reveal">
-                <div class="projet-category-header">
-                    <div class="projet-category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                    </div>
-                    <h3 class="projet-category-title">Liens</h3>
-                </div>
-                <div class="liens-grid">
-                    <a href="https://alicia227.github.io/geoacademie-platform/" target="_blank" rel="noopener" class="lien-card">
-                        <div class="lien-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                        </div>
-                        <div class="lien-card-content">
-                            <h4 class="lien-card-title">Formation</h4>
-                            <p class="lien-card-url">GéoAcadémie Platform</p>
-                        </div>
-                        <div class="lien-card-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </div>
-                    </a>
-                    <a href="https://aidofifinangnon-beep.github.io/reseau_geodesique_benin/" target="_blank" rel="noopener" class="lien-card">
-                        <div class="lien-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
-                        </div>
-                        <div class="lien-card-content">
-                            <h4 class="lien-card-title">Réseau Géodésique du Bénin</h4>
-                            <p class="lien-card-url">Projet de Géodésie</p>
-                        </div>
-                        <div class="lien-card-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </div>
-                    </a>
-                    <a href="https://fr.slideshare.net/slideshow/maitrisez-les-systemes-d-information-geographique-avec-qgis-formation-debutant-en-geomatique/287062843" target="_blank" rel="noopener" class="lien-card">
-                        <div class="lien-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        </div>
-                        <div class="lien-card-content">
-                            <h4 class="lien-card-title">Formation de Base en SIG</h4>
-                            <p class="lien-card-url">SlideShare — QGIS</p>
-                        </div>
-                        <div class="lien-card-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- ===== CATÉGORIE : Projet ===== -->
-            <div class="projet-category reveal">
-                <div class="projet-category-header">
-                    <div class="projet-category-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="projet-category-title">Projet</h3>
-                </div>
-
-                <div class="realisations-grid">
-                    <!-- PDF: analyse-spatiale -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/analyse-spatiale.pdf" data-thumb="img/projets/analyse-spatiale-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/analyse-spatiale-thumb.jpg" alt="Analyse Spatiale">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Analyse Spatiale</h4>
-                            <p class="realisation-desc">Document d'analyse spatiale détaillée réalisé dans le cadre de la formation en géomatique, illustrant les techniques d'analyse raster et vectorielle appliquées à l'étude des dynamiques territoriales.</p>
-                            <span class="projet-pages">3 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: carte-thematique-1 -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/carte-thematique-1.pdf" data-thumb="img/projets/carte-thematique-1-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/carte-thematique-1-thumb.jpg" alt="Carte Thématique">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Carte Thématique</h4>
-                            <p class="realisation-desc">Production cartographique thématique professionnelle, intégrant les principes de sémiologie graphique pour une représentation claire et rigoureuse des données géospatiales.</p>
-                            <span class="projet-pages">1 page</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: analyse-sorgon -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/analyse-sorgon.pdf" data-thumb="img/projets/analyse-sorgon-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/analyse-sorgon-thumb.jpg" alt="Analyse Sorgon">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Analyse Sorgon</h4>
-                            <p class="realisation-desc">Étude analytique de la commune de Sorgon, mobilisant les outils SIG pour une compréhension approfondie des réalités socio-spatiales et environnementales du territoire.</p>
-                            <span class="projet-pages">4 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: modelisation -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/modelisation.pdf" data-thumb="img/projets/modelisation-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/modelisation-thumb.jpg" alt="Modélisation Numérique">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Modélisation Numérique</h4>
-                            <p class="realisation-desc">Document de modélisation numérique du terrain (MNT) et d'analyse géomorphologique, démontrant la maîtrise des techniques de création et d'exploitation des modèles tri-dimensionnels.</p>
-                            <span class="projet-pages">14 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: zones-culture-mais -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/zones-culture-mais.pdf" data-thumb="img/projets/zones-culture-mais-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/zones-culture-mais-thumb.jpg" alt="Zones Favorables à la Culture du Maïs">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Zones Favorables à la Culture du Maïs</h4>
-                            <p class="realisation-desc">Projet de recherche spatiale visant à identifier et délimiter les zones favorables à la culture du maïs par l'analyse multi-critères des données pédologiques, climatiques et topographiques via SIG.</p>
-                            <span class="projet-pages">10 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: formation-qgis -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/formation-qgis.pdf" data-thumb="img/projets/formation-qgis-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/formation-qgis-thumb.jpg" alt="Formation QGIS">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Formation QGIS</h4>
-                            <p class="realisation-desc">Support de formation QGIS délivré dans le cadre de la Licence SIG et Télédétection, couvrant les fonctionnalités essentielles du logiciel pour le traitement et l'analyse des données géospatiales.</p>
-                            <span class="projet-pages">15 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: ze-commune -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/ze-commune.pdf" data-thumb="img/projets/ze-commune-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/ze-commune-thumb.jpg" alt="Étude de la Commune de Zè">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Étude de la Commune de Zè</h4>
-                            <p class="realisation-desc">Étude géomatique approfondie de la commune de Zè, intégrant l'analyse spatiale, la cartographie thématique et l'exploitation de données multi-sources pour la caractérisation du territoire.</p>
-                            <span class="projet-pages">9 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: rehabilitation-salle -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/rehabilitation-salle.pdf" data-thumb="img/projets/rehabilitation-salle-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/rehabilitation-salle-thumb.jpg" alt="Réhabilitation Salle des Spectacles">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Réhabilitation Salle des Spectacles</h4>
-                            <p class="realisation-desc">Projet technique de réhabilitation de la salle des spectacles avec construction des voies d'accès, associant levé topographique, conception AutoCAD et planification spatiale.</p>
-                            <span class="projet-pages">4 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: sig-dechets -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/sig-dechets.pdf" data-thumb="img/projets/sig-dechets-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/sig-dechets-thumb.jpg" alt="SIG et Points de Regroupement des Déchets">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">SIG et Points de Regroupement des Déchets</h4>
-                            <p class="realisation-desc">Étude SIG pour le positionnement optimal des points de regroupement des déchets, mobilisant les techniques d'analyse spatiale multicritères au service de la gestion environnementale urbaine.</p>
-                            <span class="projet-pages">17 pages</span>
-                        </div>
-                    </div>
-
-                    <!-- PDF: abomey-calavi-pdf -->
-                    <div class="realisation-card" data-type="pdf" data-pdf="img/projets/abomey-calavi-pdf.pdf" data-thumb="img/projets/abomey-calavi-pdf-thumb.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/abomey-calavi-pdf-thumb.jpg" alt="Carte Communale d'Abomey-Calavi">
-                            <span class="projet-badge-pdf">PDF</span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Carte Communale d'Abomey-Calavi</h4>
-                            <p class="realisation-desc">Document cartographique complet de la commune d'Abomey-Calavi, présentant les limites administratives, les infrastructures routières, les plans d'eau et les formations végétales.</p>
-                            <span class="projet-pages">1 page</span>
-                        </div>
-                    </div>
-
-                    <!-- Image: analyse-haute-resolution -->
-                    <div class="realisation-card" data-type="image" data-src="img/projets/analyse-haute-resolution.jpg">
-                        <div class="realisation-img-wrap">
-                            <img loading="lazy" src="img/projets/thumbs/analyse-haute-resolution.jpg" alt="Analyse Haute Résolution">
-                            <span class="projet-type-icon projet-type-img">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                            </span>
-                            <div class="realisation-overlay">
-                                <span class="realisation-zoom-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="realisation-info">
-                            <h4 class="realisation-title">Analyse Haute Résolution</h4>
-                            <p class="realisation-desc">Image d'analyse à haute résolution spatiale démontrant les capacités de traitement d'images satellitaires pour l'extraction d'informations thématiques détaillées du territoire.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- LIGHTBOX MODAL -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">&times;</button>
-            <div class="lightbox-img-container" id="lightboxImgContainer">
-                <img loading="lazy" src="" alt="" id="lightboxImg" class="lightbox-img">
-                <iframe id="lightboxPdf" class="lightbox-pdf" src="" style="display:none;"></iframe>
-            </div>
-            <div class="lightbox-info" id="lightboxInfo">
-                <h4 class="lightbox-title" id="lightboxTitle"></h4>
-                <p class="lightbox-desc" id="lightboxDesc"></p>
-                <a id="lightboxDownload" class="lightbox-download-btn" href="" download style="display:none;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Télécharger le PDF
-                </a>
-            </div>
-            <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Précédent">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Suivant">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-            <div class="lightbox-zoom-controls">
-                <button class="zoom-btn" id="zoomIn" aria-label="Zoom +">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                </button>
-                <button class="zoom-btn" id="zoomOut" aria-label="Zoom -">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6"/></svg>
-                </button>
-                <button class="zoom-btn" id="zoomReset" aria-label="Réinitialiser">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                </button>
-            </div>
-            <div class="lightbox-counter" id="lightboxCounter"></div>
-        </div>
+      <div class="leadership-card reveal">
+        <div class="card-icon">&#9901;</div>
+        <h4>Football Universitaire, <span class="gold">Discipline & Résilience</span></h4>
+        <p>
+          La pratique du football universitaire complète cette formation du caractère par le sport. Sur le terrain, Géraud développe une discipline personnelle exigeante, une résilience face à la pression et à l'adversité, et un esprit d'équipe fondamental. Ces qualités, engagement constant, capacité à rebondir après un échec, coordination fluide avec les coéquipiers, sont les mêmes qui garantissent le succès d'un projet de terrain géomatique : patience dans la collecte de données, persévérance dans l'analyse et collaboration efficace avec toutes les parties prenantes du projet.
+        </p>
+      </div>
     </div>
 
-    <!-- ===================== CHAPTER V — EXPÉRIENCE PROFESSIONNELLE ===================== -->
-    <section id="experience" class="chapter-section">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre V</span>
-                <h2 class="chapter-title">Expérience Professionnelle</h2>
-                <div class="chapter-title-line"></div>
-            </div>
+    <hr class="divider">
 
-            <div class="experience-list reveal">
-                <!-- Experience 1 -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="experience-org">IGN Cotonou</div>
-                        <div class="experience-year">2024</div>
-                    </div>
-                    <h3 class="experience-role">Stagiaire en Géomatique</h3>
-                    <div class="experience-tasks">
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Participation active aux opérations cadastrales et aux levés topographiques de terrain</span>
-                        </div>
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Structuration et alimentation de bases de données géospatiales institutionnelles</span>
-                        </div>
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Production cartographique technique conforme aux normes officielles</span>
-                        </div>
-                    </div>
-                    <p class="experience-description">Cette immersion dans l'institution nationale de référence lui permet de maîtriser les protocoles professionnels et les standards de qualité requis en cartographie officielle. Il y découvre l'exigence institutionnelle, la rigueur des procédures cadastrales et l'importance d'une production cartographique conforme aux normes en vigueur. Cette expérience fondatrice ancre sa pratique dans le réel et lui inculque le sens de la rigueur méthodologique qui caractérise désormais chacune de ses interventions professionnelles.</p>
-                </div>
+    <p class="reveal" style="text-align:center; font-style:italic; max-width:650px; margin:0 auto; color:var(--text-light); font-size:1.05rem;">
+      Il ne se construit pas seul. Il évolue dans l'action, le collectif et la responsabilité, des valeurs qui fondent l'excellence du géomaticien engagé.
+    </p>
+  </div>
+</section>
 
-                <!-- Experience 2 -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="experience-org">AtlasGIS SARL</div>
-                        <div class="experience-year">2025</div>
-                    </div>
-                    <h3 class="experience-role">Analyste SIG</h3>
-                    <div class="experience-tasks">
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Analyse et traitement de données SIG issues de drones et de campagnes terrain</span>
-                        </div>
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Appui technique à des projets cartographiques professionnels pour des clients institutionnels et privés</span>
-                        </div>
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Intégration et croisement de données multi-sources pour des livrables décisionnels</span>
-                        </div>
-                    </div>
-                    <p class="experience-description">Cette expérience en entreprise lui confère une compréhension opérationnelle des enjeux liés à la géomatique appliquée et à la satisfaction des clients. Il apprend à conjuguer exigence technique et vision commerciale, tout en développant sa capacité à livrer des résultats concrets dans des délais contraints. Le passage du cadre institutionnel au secteur privé enrichit considérablement sa palette professionnelle et lui offre une vision transversale des métiers de la géomatique.</p>
-                </div>
+<!-- ============ CHAPITRE 9 | Perspectives & Vision ============ -->
+<section class="chapter" id="chapitre-9">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 9</span>
+    <h2 class="reveal">Perspectives &amp; Vision</h2>
+    <p class="reveal">
+      L'avenir de Géraud s'inscrit dans la continuité de sa trajectoire : une montée en compétences constante, une ouverture aux innovations technologiques et une ambition de contribution au développement territorial de l'Afrique. Il vise à approfondir son expertise en géomatique avancée, à maîtriser les technologies émergentes comme l'intelligence artificielle appliquée à l'analyse géospatiale, la télédétection par drone et les bases de données spatiales en nuage.
+    </p>
+    <p class="reveal">
+      Sa vision est celle d'un géomaticien africain qui ne se contente pas d'appliquer des outils conçus ailleurs, mais qui contribue à les adapter, à les enrichir et à les mettre au service des réalités locales. Les défis de l'urbanisation rapide, de la gestion des ressources naturelles, de la sécurité alimentaire et de la résilience climatique en Afrique nécessitent des solutions géomatiques innovantes et contextualisées. Géraud entend être l'un des artisans de ces solutions.
+    </p>
+    <p class="reveal">
+      À moyen terme, il projette de poursuivre sa formation par un master en géomatique ou en sciences de l'information géographique, de développer des projets de recherche appliquée et de renforcer sa contribution à la communauté géomatique africaine. Son engagement sportif, associatif et professionnel dessine le portrait d'un jeune leader complet, dont la force technique est soutenue par une éthique de l'action et du service collectif.
+    </p>
+  </div>
+</section>
 
-                <!-- Experience 3 — NEW -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="experience-org">Projet de Réhabilitation Urbaine</div>
-                        <div class="experience-year">Avril 2026</div>
-                    </div>
-                    <h3 class="experience-role">Stagiaire Académique, Projet de Fin de Formation en Licence Professionnelle</h3>
-                    <div class="experience-tasks">
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Contribution au projet de réhabilitation des rues et collecteurs dans les villes de Bohicon et Abomey, Département du Zou</span>
-                        </div>
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Apport d'expertise en SIG et télédétection pour l'analyse spatiale, la cartographie des infrastructures existantes et la planification des interventions</span>
-                        </div>
-                        <div class="experience-task">
-                            <span class="task-bullet"></span>
-                            <span>Production de données géospatiales opérationnelles pour l'aide à la décision en matière de réhabilitation urbaine</span>
-                        </div>
-                    </div>
-                    <p class="experience-description">Depuis avril 2026, Géraud s'investit dans un stage académique constitutif de son projet de fin de formation en Licence Professionnelle. Affecté au projet de réhabilitation des rues et collecteurs des villes de Bohicon et Abomey, dans le département du Zou, il met à profit son expertise en systèmes d'information géographique et en télédétection pour contribuer à l'analyse spatiale des réseaux viaires et hydrographiques, à la cartographie précise des infrastructures existantes et à la planification stratégique des interventions de réhabilitation. Ce projet de terrain représente une concrétisation majeure de ses compétences acquises, alliant savoir technique forgé en formation et application directe au service du développement urbain de son pays. Il témoigne de sa capacité à traduire des compétences académiques en solutions opérationnelles au service de la communauté.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ CHAPITRE 10 | Mes Attentes ============ -->
+<section class="chapter" id="chapitre-10">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 10</span>
+    <h2 class="reveal">Mes Attentes</h2>
+    <p class="reveal">
+      Tout parcours professionnel se nourrit d'ambitions clairement exprimées. Géraud formule ses attentes avec la même précision qu'il applique à l'analyse spatiale : des objectifs mesurables, des échéances réalistes et une vision stratégique ancrée dans les réalités du terrain. Ces attentes ne sont pas de simples voeux, mais des engagements personnels qui guident chacune de ses décisions professionnelles et académiques.
+    </p>
 
-    <!-- ===================== CHAPTER VI — POSITIONNEMENT PROFESSIONNEL ===================== -->
-    <section id="positionnement" class="chapter-section alternate-bg">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre VI</span>
-                <h2 class="chapter-title">Positionnement Professionnel</h2>
-                <div class="chapter-title-line"></div>
-            </div>
+    <div class="attentes-grid">
+      <div class="attente-card reveal">
+        <div class="card-icon">&#9881;</div>
+        <h4>Excellence Technique</h4>
+        <p>
+          Maîtriser les technologies géomatiques de pointe : télédétection par drone, intelligence artificielle appliquée à l'analyse géospatiale, bases de données spatiales en nuage et webmapping. Géraud vise une expertise qui dépasse la simple utilisation des outils pour atteindre la capacité de concevoir des solutions innovantes adaptées aux défis territoriaux africains. Il attend de lui-même une rigueur méthodologique irréprochable et une veille technologique constante.
+        </p>
+      </div>
 
-            <div class="positioning-content reveal">
-                <p class="positioning-intro">Spécialiste en <span class="gold">géomatique appliquée</span>, orienté analyse, structuration et aide à la décision spatiale</p>
+      <div class="attente-card reveal">
+        <div class="card-icon">&#127758;</div>
+        <h4>Impact Territorial</h4>
+        <p>
+          Contribuer concrètement au développement territorial du Bénin et de l'Afrique par des projets SIG à fort impact. Géraud attend de ses projets qu'ils produisent des résultats mesurables : meilleure gestion des ressources naturelles, urbanisme durable, sécurité alimentaire renforcée et résilience climatique améliorée. Il refuse l'approche théorique déconnectée du terrain et privilégie les solutions appliquées.
+        </p>
+      </div>
 
-                <p class="positioning-text">Sa valeur ajoutée ne repose pas uniquement sur la maîtrise technique des outils, mais sur sa capacité à transformer des données complexes en informations exploitables et en décisions éclairées. Il se distingue par sa faculté à :</p>
+      <div class="attente-card reveal">
+        <div class="card-icon">&#127891;</div>
+        <h4>Formation Continue</h4>
+        <p>
+          Poursuivre sa montée en compétences par un master en géomatique ou en sciences de l'information géographique, et par des certifications professionnelles reconnues internationalement. Géraud considère que la formation ne s'arrête jamais : chaque projet est une occasion d'apprendre, chaque échec une opportunité de progresser, chaque collaboration une source de connaissances nouvelles.
+        </p>
+      </div>
 
-                <div class="positioning-capabilities">
-                    <div class="capability-item">
-                        <div class="capability-number">01</div>
-                        <div class="capability-text">Structurer une analyse spatiale de bout en bout, de la collecte à la restitution</div>
-                    </div>
-                    <div class="capability-item">
-                        <div class="capability-number">02</div>
-                        <div class="capability-text">Produire des cartes claires, lisibles et professionnelles qui servent le décisionnel</div>
-                    </div>
-                    <div class="capability-item">
-                        <div class="capability-number">03</div>
-                        <div class="capability-text">Rendre compréhensibles des données géospatiales complexes pour tout public</div>
-                    </div>
-                    <div class="capability-item">
-                        <div class="capability-number">04</div>
-                        <div class="capability-text">Transformer un projet territorial en livrable concret et exploitable</div>
-                    </div>
-                </div>
+      <div class="attente-card reveal">
+        <div class="card-icon">&#129309;</div>
+        <h4>Collaboration & Réseau</h4>
+        <p>
+          Développer un réseau professionnel solide dans la communauté géomatique africaine et internationale. Géraud attend des collaborations qui enrichissent mutuellement les partenaires, qui croisent les expertises et qui génèrent des innovations. Il cherche à travailler avec des professionnels passionnés, des institutions engagées et des équipes pluridisciplinaires capables de relever les défis complexes de l'aménagement du territoire.
+        </p>
+      </div>
 
-                <!-- Formula -->
-                <div class="formula-card">
-                    <div class="formula-label">Vision d'innovation</div>
-                    <div class="formula-content">
-                        <span class="formula-item">SIG</span>
-                        <span class="formula-plus">+</span>
-                        <span class="formula-item">Télédétection</span>
-                        <span class="formula-plus">+</span>
-                        <span class="formula-item">IA</span>
-                        <span class="formula-equals">=</span>
-                        <span class="formula-result">Innovation Territoriale</span>
-                    </div>
-                </div>
+      <div class="attente-card reveal">
+        <div class="card-icon">&#128161;</div>
+        <h4>Innovation Locale</h4>
+        <p>
+          Ne pas se contenter d'appliquer des outils conçus ailleurs, mais contribuer à les adapter, à les enrichir et à les contextualiser pour les réalités africaines. Géraud attend de lui-même qu'il devienne un créateur de solutions géomatiques, pas seulement un utilisateur. Il vise à développer des méthodologies et des outils qui répondent spécifiquement aux besoins des territoires béninois et ouest-africains.
+        </p>
+      </div>
 
-                <!-- Quote -->
-                <div class="positioning-quote">
-                    <p class="quote-text-large">Il n'apporte pas des cartes. Il apporte de la clarté dans des systèmes complexes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="attente-card reveal">
+        <div class="card-icon">&#9878;</div>
+        <h4>Éthique & Responsabilité</h4>
+        <p>
+          Exercer le métier de géomaticien avec une éthique professionnelle irréprochable : rigueur dans la collecte et le traitement des données, transparence dans les méthodes d'analyse, honnêteté dans la présentation des résultats et responsabilité dans l'usage des informations géographiques. Géraud attend de lui-même qu'il soit un professionnel de confiance, dont les livrables font autorité.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===================== CHAPTER VII — LEADERSHIP & ENGAGEMENTS ===================== -->
-    <section id="leadership" class="chapter-section">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre VII</span>
-                <h2 class="chapter-title">Leadership & Engagements</h2>
-                <div class="chapter-title-line"></div>
-            </div>
+<!-- ============ CHAPITRE 11 | Contact & Liens ============ -->
+<section class="chapter" id="chapitre-11">
+  <div class="container">
+    <span class="chapter-number reveal">Chapitre 11</span>
+    <h2 class="reveal">Contact &amp; Liens</h2>
+    <p class="reveal">
+      Pour toute collaboration, projet ou échange professionnel, Géraud est joignable par les canaux suivants. N'hésitez pas à le contacter pour des missions de géomatique, des projets SIG, des formations ou des partenariats liés à l'aménagement du territoire et au développement durable.
+    </p>
 
-            <div class="leadership-grid reveal">
-                <!-- Leadership 1 -->
-                <div class="leadership-card">
-                    <div class="leadership-period">2025 → 2026</div>
-                    <h3 class="leadership-title">Chargé de mission FEUA</h3>
-                    <p class="leadership-description">Responsable de missions stratégiques au sein de la Fédération des Étudiants Universitaires d'Afrique. Il y développe des compétences en coordination, en planification et en gestion de partenariats, confirmant sa capacité à évoluer dans des environnements exigeants et collaboratifs. Cette fonction lui permet de conjuguer leadership associatif et vision panafricaine, tout en consolidant son aptitude à piloter des projets d'envergure.</p>
-                </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="card-icon">&#9993;</div>
+        <h4>Email</h4>
+        <p>geraudadf@gmail.com</p>
+        <a href="mailto:geraudadf@gmail.com" class="contact-link">Envoyer un e-mail</a>
+      </div>
 
-                <!-- Leadership 2 -->
-                <div class="leadership-card">
-                    <div class="leadership-period">2024 → Présent</div>
-                    <h3 class="leadership-title">Ambassadeur de la Géomatique Appliquée</h3>
-                    <p class="leadership-description">Promotion active de la géomatique auprès des jeunes professionnels et étudiants béninois. Il œuvre pour faire connaître les métiers de la géomatique et inspirer la nouvelle génération à s'engager dans les sciences spatiales et l'intelligence territoriale. Son rôle d'ambassadeur témoigne de sa conviction profonde : la géomatique est un levier de transformation pour l'Afrique, et il incombe à ceux qui la maîtrisent de la partager.</p>
-                </div>
+      <div class="contact-card reveal">
+        <div class="card-icon">&#128241;</div>
+        <h4>WhatsApp</h4>
+        <p>+229 01 44 25 54 27</p>
+        <a href="https://wa.me/2290144255427" target="_blank" rel="noopener noreferrer" class="contact-link">Contacter sur WhatsApp</a>
+      </div>
 
-                <!-- Leadership 3 -->
-                <div class="leadership-card">
-                    <div class="leadership-period">En continu</div>
-                    <h3 class="leadership-title">Membre actif de la communauté étudiante en géomatique</h3>
-                    <p class="leadership-description">Implication soutenue dans des projets collaboratifs, des ateliers de formation et des échanges professionnels qui enrichissent sa vision du secteur et consolident son réseau. Cette dynamique communautaire nourrit sa réflexion et lui permet de rester connecté aux évolutions de la profession, tout en contribuant à l'émergence d'une communauté de pratique dynamique et solidaire.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="contact-card reveal">
+        <div class="card-icon">&#128279;</div>
+        <h4>LinkedIn</h4>
+        <p>Profil professionnel</p>
+        <a href="https://www.linkedin.com/in/g%C3%A9raud-finangnon-a%C3%AFdofi-a074953aa" target="_blank" rel="noopener noreferrer" class="contact-link">Voir le profil</a>
+      </div>
+    </div>
 
-    <!-- ===================== CHAPTER VIII — PROFIL PERSONNEL & LANGUES ===================== -->
-    <section id="profil" class="chapter-section alternate-bg">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre VIII</span>
-                <h2 class="chapter-title">Profil Personnel & Langues</h2>
-                <div class="chapter-title-line"></div>
-            </div>
+    <hr class="divider">
 
-            <div class="profile-content reveal">
-                <div class="profile-text-block">
-                    <p class="profile-paragraph">Jeune professionnel déterminé, rigoureux et visionnaire, Géraud Finangnon AIDOFI incarne une nouvelle génération de géomaticiens africains qui entendent transformer leur environnement par l'intelligence des données. Sa capacité à allier compétences techniques, engagement associatif et vision stratégique fait de lui un profil complet, prêt à contribuer activement au développement territorial du Bénin et de l'Afrique toute entière.</p>
+    <div class="liens-section reveal">
+      <h3 style="font-size:1.2rem; color:var(--amber-dark); margin-bottom:20px;">Liens Utiles</h3>
+      <div class="liens-grid">
+        <a href="https://alicia227.github.io/geoacademie-platform/" target="_blank" rel="noopener noreferrer" class="lien-item">
+          <span class="lien-icon">&#127979;</span>
+          <div>
+            <strong>FORMATION</strong>
+            <small>Plateforme de formation en géomatique</small>
+          </div>
+        </a>
+        <a href="https://aidofifinangnon-beep.github.io/reseau_geodesique_benin/" target="_blank" rel="noopener noreferrer" class="lien-item">
+          <span class="lien-icon">&#127758;</span>
+          <div>
+            <strong>RÉSEAU GÉODÉSIQUE DU BÉNIN</strong>
+            <small>Infrastructure géodésique nationale</small>
+          </div>
+        </a>
+        <a href="https://fr.slideshare.net/slideshow/maitrisez-les-systemes-d-information-geographique-avec-qgis-formation-debutant-en-geomatique/287062843" target="_blank" rel="noopener noreferrer" class="lien-item">
+          <span class="lien-icon">&#128202;</span>
+          <div>
+            <strong>FORMATION DE BASE EN SIG</strong>
+            <small>Maîtrisez les SIG avec QGIS</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <p class="profile-paragraph">Il ne se contente pas de maîtriser les outils : il les met au service d'une ambition plus large, celle de rendre les territoires lisibles, intelligibles et pilotables grâce à la donnée géospatiale. Chaque projet qu'il porte témoigne de cette philosophie : la technique n'est jamais une fin en soi, mais un moyen de servir des communautés et des territoires concrets.</p>
+<!-- ============ CONCLUSION ============ -->
+<section class="chapter conclusion" id="conclusion">
+  <div class="container">
+    <span class="chapter-number reveal">Conclusion</span>
+    <h2 class="reveal">Construire l'Espace, Cartographier l'Avenir</h2>
+    <p class="reveal">
+      Le parcours de Géraud Finangnon AIDOFI est celui d'un jeune professionnel béninois qui a choisi de mettre la technologie au service du territoire. De ses premières années de formation en topographie à sa licence professionnelle en géomatique, en passant par ses engagements associatifs et sportifs, il a construit un profil complet où compétence technique, leadership et éthique professionnelle se renforcent mutuellement.
+    </p>
+    <p class="reveal">
+      Chaque projet réalisé, de la cartographie de la commune de Zè à l'analyse spatiale pour la gestion des déchets, de l'identification des zones favorables à la culture du maïs à la formation QGIS, témoigne d'une même exigence : transformer les données en décisions, les cartes en actions, les analyses en impacts concrets pour les communautés.
+    </p>
+    <p class="reveal">
+      Géraud ne se définit pas seulement par ce qu'il sait faire, mais par ce qu'il veut construire : un avenir où la géomatique africaine innove, s'adapte et répond aux défis réels du continent. Un avenir où chaque coordonnée GPS, chaque couche thématique et chaque carte produite contribue à un développement territorial plus juste, plus durable et plus résilient.
+    </p>
+    <div class="conclusion-badge reveal">
+      <span class="gold">Géomaticien &amp; Ingénieur SIG</span>
+      <br>
+      <small>Construire l'espace, cartographier l'avenir</small>
+    </div>
+  </div>
+</section>
 
-                    <p class="profile-paragraph">Son parcours reflète une cohérence remarquable entre formation, expériences professionnelles et engagements personnels. De Covè Adogbé aux chantiers de réhabilitation de Bohicon et Abomey, c'est un même fil conducteur qui guide ses choix : mettre la géomatique au service du développement, de la résilience et de l'intelligence territoriale.</p>
-                </div>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Géraud Finangnon <span class="gold">AIDOFI</span> | Géomaticien &amp; Ingénieur SIG</p>
+    <p style="margin-top:8px; font-size:.8rem;">Construire l'espace, cartographier l'avenir</p>
+  </div>
+</footer>
 
-                <div class="languages-section">
-                    <h3 class="languages-title">Langues</h3>
-                    <div class="languages-grid">
-                        <div class="language-card">
-                            <div class="language-name">Français</div>
-                            <div class="language-level">Langue maternelle</div>
-                        </div>
-                        <div class="language-card">
-                            <div class="language-name">Anglais</div>
-                            <div class="language-level">Niveau intermédiaire</div>
-                        </div>
-                        <div class="language-card">
-                            <div class="language-name">Fon</div>
-                            <div class="language-level">Langue locale</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" role="dialog" aria-label="Visualisation">
+  <button class="lightbox-close" aria-label="Fermer">&times;</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="Précédent">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" aria-label="Suivant">&#8250;</button>
+  <div class="lightbox-content"></div>
+  <div class="lightbox-title"></div>
+  <div class="lightbox-zoom">
+    <button class="zoom-in" aria-label="Zoom avant">+</button>
+    <button class="zoom-out" aria-label="Zoom arrière">&minus;</button>
+    <button class="zoom-reset" aria-label="Réinitialiser">&#8634;</button>
+    <a class="lightbox-download" aria-label="Télécharger" style="display:none;" download>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+    </a>
+  </div>
+</div>
 
-    <!-- ===================== CHAPTER IX — VISION & PERSPECTIVES ===================== -->
-    
-    <!-- ===================== CONTACT ===================== -->
-    <section id="contact" class="chapter-section alternate-bg">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Contact</span>
-                <h2 class="chapter-title">Me Contacter</h2>
-                <div class="chapter-title-line"></div>
-            </div>
-            <div class="contact-grid reveal">
-                <a href="mailto:geraudad@gmail.com" class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <h4 class="contact-label">Email</h4>
-                        <p class="contact-value">geraudad@gmail.com</p>
-                    </div>
-                </a>
-                <a href="https://wa.me/2290144255427" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <h4 class="contact-label">WhatsApp</h4>
-                        <p class="contact-value">+229 01 44 25 54 27</p>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/g%C3%A9raud-finangnon-a%C3%AFdofi-a074953aa" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <h4 class="contact-label">LinkedIn</h4>
-                        <p class="contact-value">Géraud Finangnon Aïdofi</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="vision" class="chapter-section">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Chapitre IX</span>
-                <h2 class="chapter-title">Vision & Perspectives</h2>
-                <div class="chapter-title-line"></div>
-            </div>
-
-            <div class="vision-content reveal">
-                <p class="vision-paragraph">Géraud Finangnon AIDOFI se projette vers un avenir où la géomatique joue un rôle central dans la gouvernance territoriale en Afrique. Sa vision est claire et porteuse : contribuer à bâtir des villes plus résilientes, des territoires mieux aménagés et des politiques publiques éclairées par la donnée géospatiale. Il est convaincu que l'Afrique possède en ses territoires un potentiel immense qui, correctement cartographié, analysé et valorisé, peut devenir le socle d'un développement durable et inclusif.</p>
-
-                <p class="vision-paragraph">Il aspire à approfondir son expertise par des formations avancées en géomatique et intelligence artificielle appliquée, tout en développant des solutions innovantes pour les défis urbains et environnementaux du continent. Son ambition est de devenir un acteur de référence dans la transformation numérique des territoires africains, en faisant le pont entre la tradition des savoirs locaux et la modernité des technologies géospatiales. Il voit dans la convergence entre SIG, télédétection et intelligence artificielle l'avènement d'une nouvelle ère de l'intelligence territoriale, où les territoires se comprennent, se prévoient et se pilotent en temps réel.</p>
-
-                <p class="vision-highlight">L'avenir qu'il porte est celui d'une Afrique où chaque mètre carré de territoire est connu, compris et optimisé, où les décisions d'aménagement reposent sur des données fiables et actualisées, et où la géomatique devient un levier stratégique de développement durable au service des communautés.</p>
-
-                <!-- Closing decorative element -->
-                <div class="vision-closing">
-                    <div class="closing-diamond"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== RÉSUMÉ & PERSPECTIVES ===================== -->
-    <section id="resume" class="chapter-section resume-section">
-        <div class="chapter-container">
-            <div class="chapter-header reveal">
-                <span class="chapter-number">Épilogue</span>
-                <h2 class="chapter-title">Résumé & Perspectives</h2>
-                <div class="chapter-title-line"></div>
-            </div>
-
-            <div class="resume-content reveal">
-                <div class="resume-portrait">
-                    <div class="resume-photo-wrap">
-                        <img loading="lazy" src="img/geraud-photo.jpeg" alt="Géraud Finangnon AIDOFI">
-                    </div>
-                </div>
-                <div class="resume-text">
-                    <p class="resume-paragraph">Géraud Finangnon AIDOFI, né à Covè Adogbé au Bénin, est un jeune spécialiste en géomatique appliquée dont le parcours incarne la convergence entre rigueur technique et vision stratégique. Titulaire d'un Baccalauréat Technique obtenu avec Mention Bien au Lycée de Kpondéhou et d'un Diplôme de Technicien BTP, il poursuit actuellement sa Licence Professionnelle en SIG et Télédétection à l'ENSTP, où il forge les fondements d'une expertise qui fait déjà ses preuves sur le terrain.</p>
-                    <p class="resume-paragraph">Sa maîtrise des systèmes d'information géographique — ArcMap, QGIS — couplée à ses compétences en télédétection via ENVI et Google Earth, en photogrammétrie drone avec Pix4D et Agisoft, ainsi qu'en dessin topographique sur AutoCAD, Covadis et ArchiCAD, lui confère un profil polyvalent et opérationnel. Ses stages à l'IGN Cotonou et chez AtlasGIS SARL ont consolidé son expérience pratique, tandis que ses productions cartographiques et ses dessins topographiques témoignent d'un savoir-faire concret et mesurable.</p>
-                    <p class="resume-paragraph">Engagé dans le leadership étudiant en tant que délégué de licence et fondateur de GéoAcadémie, il combine l'excellence technique avec le sens du collectif et la transmission des savoirs. Trilingue (Fon, Français, Anglais), il possède une ouverture internationale naturelle, un atout majeur dans un domaine par essence mondialisé.</p>
-                    <div class="resume-cta">
-                        <p class="resume-cta-text">Disponible pour les collaborations, les projets innovants et les opportunités professionnelles en géomatique, SIG, cartographie et intelligence territoriale. Chaque territoire a une histoire à raconter — ensemble, donnons-lui voix.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Slogan -->
-            <div class="slogan-block reveal">
-                <div class="slogan-ornament"></div>
-                <p class="slogan-text">Là où d'autres voient un territoire, je vois un système de données qui attend sa voix.</p>
-                <div class="slogan-author">— Géraud Finangnon AIDOFI</div>
-                <div class="slogan-ornament"></div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="book-footer">
-        <div class="footer-content">
-            <div class="footer-line"></div>
-            <p class="footer-text">Géraud Finangnon AIDOFI</p>
-            <p class="footer-subtitle">Spécialiste en Géomatique Appliquée</p>
-            <div class="footer-ornament"></div>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"/>
-        </svg>
-    </button>
-
-    <script src="js/app.js" defer></script>
+<script src="js/app.js"></script>
 </body>
 </html>
