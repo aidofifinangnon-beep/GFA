@@ -17,28 +17,31 @@
     }
   }, 4000);
 
-  // --- Particle Animation on Cover ---
-  function initParticles() {
-    var canvas = document.getElementById('particlesCanvas');
+  // --- Cover Constellation Canvas ---
+  function initConstellation() {
+    var canvas = document.getElementById('coverCanvas');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     var particles = [];
-    var particleCount = 50;
-    var animationId;
+    var particleCount = 80;
+    var maxDist = 130;
+    var animId;
 
     function resize() {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
+      var parent = canvas.parentElement;
+      canvas.width = parent.offsetWidth;
+      canvas.height = parent.offsetHeight;
     }
 
     function createParticle() {
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        radius: Math.random() * 1.8 + 0.4,
+        opacity: Math.random() * 0.5 + 0.15,
+        color: Math.random() > 0.7 ? 'amber' : (Math.random() > 0.5 ? 'cyan' : 'emerald')
       };
     }
 
@@ -50,6 +53,12 @@
       }
     }
 
+    function getColor(c, alpha) {
+      if (c === 'amber') return 'rgba(245,158,11,' + alpha + ')';
+      if (c === 'cyan') return 'rgba(6,182,212,' + alpha + ')';
+      return 'rgba(16,185,129,' + alpha + ')';
+    }
+
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -59,14 +68,15 @@
         p.y += p.vy;
 
         // Wrap around
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        if (p.x < -10) p.x = canvas.width + 10;
+        if (p.x > canvas.width + 10) p.x = -10;
+        if (p.y < -10) p.y = canvas.height + 10;
+        if (p.y > canvas.height + 10) p.y = -10;
 
+        // Draw dot
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(16,185,129,' + p.opacity + ')';
+        ctx.fillStyle = getColor(p.color, p.opacity);
         ctx.fill();
 
         // Draw connections
@@ -75,28 +85,27 @@
           var dx = p.x - p2.x;
           var dy = p.y - p2.y;
           var dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
+          if (dist < maxDist) {
+            var alpha = 0.08 * (1 - dist / maxDist);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = 'rgba(16,185,129,' + (0.08 * (1 - dist / 120)) + ')';
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = getColor(p.color, alpha);
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
       }
 
-      animationId = requestAnimationFrame(draw);
+      animId = requestAnimationFrame(draw);
     }
 
-    // Check prefers-reduced-motion
+    // Respect reduced motion
     var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReduced) {
       init();
       draw();
-      window.addEventListener('resize', function () {
-        resize();
-      });
+      window.addEventListener('resize', function () { resize(); });
     }
   }
 
@@ -416,7 +425,7 @@
 
   // --- Init all ---
   document.addEventListener('DOMContentLoaded', function () {
-    initParticles();
+    initConstellation();
     initReveal();
     initProgressBar();
     initBackToTop();

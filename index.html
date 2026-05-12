@@ -53,20 +53,33 @@
 
 <!-- ============ COVER ============ -->
 <header class="cover" id="couverture">
-  <div class="cover-grid"></div>
-  <canvas class="cover-particles" id="particlesCanvas"></canvas>
+  <canvas class="cover-canvas" id="coverCanvas"></canvas>
+  <div class="cover-bg"></div>
+  <div class="cover-orb cover-orb-1"></div>
+  <div class="cover-orb cover-orb-2"></div>
+  <div class="cover-orb cover-orb-3"></div>
   <div class="cover-content">
-    <img src="img/profile.jpg" alt="Géraud Finangnon AIDOFI" class="cover-profile" loading="lazy">
-    <p class="cover-subtitle">Biographie professionnelle</p>
-    <h1>Géraud Finangnon <span>AIDOFI</span></h1>
-    <p class="cover-tagline">Géomaticien & Ingénieur SIG | Construire l'espace, cartographier l'avenir</p>
-    <div class="cover-badge">
-      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      Licence Professionnelle en Géomatique | ENSTP Bénin
+    <div class="cover-photo-wrapper">
+      <div class="cover-pulse-ring cover-pulse-1"></div>
+      <div class="cover-pulse-ring cover-pulse-2"></div>
+      <div class="cover-pulse-ring cover-pulse-3"></div>
+      <div class="cover-photo-ring cover-ring-1"></div>
+      <div class="cover-photo-ring cover-ring-2"></div>
+      <div class="cover-photo-ring cover-ring-3"></div>
+      <div class="cover-photo-frame">
+        <img src="img/profile.jpg" alt="Géraud Finangnon AIDOFI" class="cover-photo" loading="lazy">
+      </div>
+    </div>
+    <div class="cover-text">
+      <h1 class="cover-name">Géraud Finangnon <em>AIDOFI</em></h1>
+      <div class="cover-separator"><span></span></div>
+      <p class="cover-role">Géomaticien & Ingénieur SIG</p>
+      <p class="cover-quote">Construire l'espace, cartographier l'avenir</p>
     </div>
   </div>
-  <div class="cover-scroll">
-    <svg viewBox="0 0 24 24"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+  <div class="cover-footer">
+    <div class="cover-footer-line"></div>
+    <p class="cover-school">Licence SIG & Télédétection — ENSTP Bénin</p>
   </div>
 </header>
 
@@ -365,6 +378,9 @@
     </p>
 
     <div class="realisations-grid">
+      <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/carte-parcelle.jpg" data-title="Carte de Parcelle">
+        <img src="img/realisations/carte-parcelle-thumb.jpg" alt="Carte de Parcelle" loading="lazy">
+      </div>
       <div class="realisation-card reveal" data-gallery="realisations" data-src="img/realisations/analyse-haute-resolution.jpg" data-title="Analyse Haute Résolution">
         <img src="img/realisations/analyse-haute-resolution-thumb.jpg" alt="Analyse Haute Résolution" loading="lazy">
       </div>
