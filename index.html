@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="description" content="Biographie professionnelle de Géraud Finangnon AIDOFI, Géomaticien & Ingénieur SIG">
-  <meta name="theme-color" content="#10B981">
+  <meta name="theme-color" content="#0B1D26">
   <title>Géraud Finangnon AIDOFI | Géomaticien & Ingénieur SIG</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- ============ SKIP TO CONTENT (Accessibility) ============ -->
+<a href="#mainContent" class="skip-link">Aller au contenu principal</a>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-globe"></div>
+    <div class="loader-text">Chargement...</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
 
 <!-- Progressive enhancement: ensure content visible without JS -->
 <noscript>
@@ -23,7 +35,87 @@
 <div class="progress-bar" id="progressBar"></div>
 
 <!-- Back to Top Button -->
-<button class="back-to-top" id="backToTop" aria-label="Retour en haut">&#8679;</button>
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <svg class="back-to-top-ring" viewBox="0 0 48 48"><circle class="ring-bg" cx="24" cy="24" r="22"/><circle class="ring-progress" cx="24" cy="24" r="22"/></svg>
+    <span class="back-to-top-arrow">&#8679;</span>
+  </button>
+
+<!-- ============ FLOATING ACTION BUTTON (FAB) ============ -->
+<div class="fab-container" id="fabContainer">
+  <div class="fab-options" id="fabOptions">
+    <button class="fab-option" data-action="fontsize" title="Taille du texte">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+    </button>
+    <button class="fab-option" data-action="bookmark" title="Marquer cette position">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+    </button>
+    <button class="fab-option" data-action="darkmode" title="Mode sombre/clair">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+    <button class="fab-option" data-action="search" title="Rechercher">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button class="fab-option" data-action="share" title="Partager">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+    </button>
+    <button class="fab-option" data-action="print" title="Imprimer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    </button>
+  </div>
+  <button class="fab-main" id="fabMain" aria-label="Actions">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+  </button>
+</div>
+
+<!-- ============ SIDE NAV DOTS ============ -->
+<nav class="side-nav" id="sideNav" aria-label="Navigation par sections">
+  <a class="side-nav-dot active" href="#couverture" data-section="couverture" title="Couverture"></a>
+  <a class="side-nav-dot" href="#chapitre-1" data-section="chapitre-1" title="Ch.1 - Origines"></a>
+  <a class="side-nav-dot" href="#chapitre-2" data-section="chapitre-2" title="Ch.2 - Formation"></a>
+  <a class="side-nav-dot" href="#chapitre-3" data-section="chapitre-3" title="Ch.3 - Compétences"></a>
+  <a class="side-nav-dot" href="#chapitre-4" data-section="chapitre-4" title="Ch.4 - Outils"></a>
+  <a class="side-nav-dot" href="#chapitre-5" data-section="chapitre-5" title="Ch.5 - Projets"></a>
+  <a class="side-nav-dot" href="#chapitre-6" data-section="chapitre-6" title="Ch.6 - Réalisations"></a>
+  <a class="side-nav-dot" href="#chapitre-7" data-section="chapitre-7" title="Ch.7 - Dessins"></a>
+  <a class="side-nav-dot" href="#liens-utiles" data-section="liens-utiles" title="Liens Utiles"></a>
+  <a class="side-nav-dot" href="#chapitre-8" data-section="chapitre-8" title="Ch.8 - Leadership"></a>
+  <a class="side-nav-dot" href="#chapitre-9" data-section="chapitre-9" title="Ch.9 - Perspectives"></a>
+  <a class="side-nav-dot" href="#chapitre-10" data-section="chapitre-10" title="Ch.10 - Attentes"></a>
+  <a class="side-nav-dot" href="#chapitre-11" data-section="chapitre-11" title="Ch.11 - Contact"></a>
+  <a class="side-nav-dot" href="#conclusion" data-section="conclusion" title="Conclusion"></a>
+</nav>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <button class="search-close" id="searchClose" aria-label="Fermer">&times;</button>
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Rechercher dans la biographie..." autocomplete="off">
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-hint">Appuyez sur <kbd>Ctrl</kbd>+<kbd>K</kbd> pour rechercher | <kbd>Esc</kbd> pour fermer</div>
+  </div>
+</div>
+
+<!-- ============ KEYBOARD SHORTCUTS HELP ============ -->
+<div class="kbd-help" id="kbdHelp">
+  <div class="kbd-help-box">
+    <button class="kbd-help-close" id="kbdHelpClose">&times;</button>
+    <h3>Raccourcis clavier</h3>
+    <div class="kbd-list">
+      <div class="kbd-item"><kbd>Ctrl</kbd>+<kbd>K</kbd> <span>Rechercher</span></div>
+      <div class="kbd-item"><kbd>Ctrl</kbd>+<kbd>D</kbd> <span>Mode sombre</span></div>
+      <div class="kbd-item"><kbd>Ctrl</kbd>+<kbd>P</kbd> <span>Imprimer</span></div>
+      <div class="kbd-item"><kbd>?</kbd> <span>Aide raccourcis</span></div>
+      <div class="kbd-item"><kbd>Esc</kbd> <span>Fermer un panneau</span></div>
+      <div class="kbd-item"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> <span>Navigation lightbox</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST CONTAINER ============ -->
+<div class="toast-container" id="toastContainer"></div>
 
 <!-- ============ TOC TOGGLE ============ -->
 <button class="toc-toggle" aria-label="Table des matières">&#9776;</button>
@@ -43,45 +135,112 @@
     <li><a href="#chapitre-5">Projets Réalisés</a></li>
     <li><a href="#chapitre-6">Quelques Réalisations</a></li>
     <li><a href="#chapitre-7">Dessins & Créativité</a></li>
+    <li><a href="#liens-utiles">Liens Utiles</a></li>
     <li><a href="#chapitre-8">Leadership & Engagement</a></li>
     <li><a href="#chapitre-9">Perspectives & Vision</a></li>
     <li><a href="#chapitre-10">Mes Attentes</a></li>
-    <li><a href="#chapitre-11">Contact & Liens</a></li>
+    <li><a href="#chapitre-11">Contact</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ol>
 </nav>
 
 <!-- ============ COVER ============ -->
 <header class="cover" id="couverture">
-  <canvas class="cover-canvas" id="coverCanvas"></canvas>
-  <div class="cover-bg"></div>
-  <div class="cover-orb cover-orb-1"></div>
-  <div class="cover-orb cover-orb-2"></div>
-  <div class="cover-orb cover-orb-3"></div>
-  <div class="cover-content">
-    <div class="cover-photo-wrapper">
-      <div class="cover-pulse-ring cover-pulse-1"></div>
-      <div class="cover-pulse-ring cover-pulse-2"></div>
-      <div class="cover-pulse-ring cover-pulse-3"></div>
-      <div class="cover-photo-ring cover-ring-1"></div>
-      <div class="cover-photo-ring cover-ring-2"></div>
-      <div class="cover-photo-ring cover-ring-3"></div>
+  <!-- Animated golden dust particles with sparkles -->
+  <canvas class="cover-canvas" id="goldCanvas"></canvas>
+
+  <!-- Topographic contour line animation -->
+  <canvas class="cover-topo-canvas" id="topoCanvas"></canvas>
+
+  <!-- Cartography coordinate grid -->
+  <div class="cover-grid" aria-hidden="true"></div>
+
+  <!-- Dramatic radial glow -->
+  <div class="cover-glow"></div>
+
+  <!-- Ornamental corner borders -->
+  <div class="cover-ornament cover-orn-tl"></div>
+  <div class="cover-ornament cover-orn-tr"></div>
+  <div class="cover-ornament cover-orn-bl"></div>
+  <div class="cover-ornament cover-orn-br"></div>
+
+  <!-- Left side decorative vertical text -->
+  <div class="cover-side-text" aria-hidden="true">GÉOMATIQUE &bull; CARTOGRAPHIE &bull; SIG &bull; TÉLÉDÉTECTION &bull; TOPOGRAPHIE</div>
+
+  <!-- Main cover layout -->
+  <div class="cover-layout" id="coverLayout">
+    <!-- Photo section -->
+    <div class="cover-photo-section">
       <div class="cover-photo-frame">
-        <img src="img/profile.jpg" alt="Géraud Finangnon AIDOFI" class="cover-photo" loading="lazy">
+        <div class="frame-border"></div>
+        <div class="frame-glow"></div>
+        <img src="img/profile.jpg" alt="Géraud Finangnon AIDOFI" class="cover-profile" loading="lazy">
+        <div class="frame-corner frame-corner-tl"></div>
+        <div class="frame-corner frame-corner-tr"></div>
+        <div class="frame-corner frame-corner-bl"></div>
+        <div class="frame-corner frame-corner-br"></div>
       </div>
     </div>
-    <div class="cover-text">
-      <h1 class="cover-name">Géraud Finangnon <em>AIDOFI</em></h1>
-      <div class="cover-separator"><span></span></div>
-      <p class="cover-role">Géomaticien & Ingénieur SIG</p>
-      <p class="cover-quote">Construire l'espace, cartographier l'avenir</p>
+
+    <!-- Text section -->
+    <div class="cover-text-section">
+      <div class="cover-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text">Biographie Professionnelle</span>
+        <span class="eyebrow-line"></span>
+      </div>
+
+      <h1 class="cover-title">
+        <span class="title-first">Géraud</span>
+        <span class="title-middle">Finangnon</span>
+        <span class="title-last">AIDOFI</span>
+      </h1>
+
+      <div class="cover-tagline" id="coverTagline" data-text="Géomaticien & Ingénieur SIG | Construire l'espace, cartographier l'avenir"></div>
+
+      <div class="cover-divider">
+        <span class="divider-diamond"></span>
+      </div>
     </div>
   </div>
-  <div class="cover-footer">
-    <div class="cover-footer-line"></div>
-    <p class="cover-school">Licence SIG & Télédétection — ENSTP Bénin</p>
-  </div>
 </header>
+
+<!-- Main content anchor for skip link -->
+<div id="mainContent"></div>
+
+<!-- ============ READING TIME INDICATOR ============ -->
+<div class="reading-time" id="readingTime">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+  <span id="readingTimeText">Temps de lecture estimé: ...</span>
+</div>
+
+<!-- ============ STATS BAR ============ -->
+<div class="stats-bar" id="statsBar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="9">0</span>
+        <span class="stat-label">Outils maîtrisés</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="9">0</span>
+        <span class="stat-label">Projets réalisés</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="18">0</span>
+        <span class="stat-label">Cartes produites</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="6">0</span>
+        <span class="stat-label">Compétences SIG</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="5">0</span>
+        <span class="stat-label">Engagements</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ============ CHAPITRE 1 | Origines & Parcours ============ -->
 <section class="chapter" id="chapitre-1">
@@ -98,7 +257,12 @@
       Depuis ses premières manipulations de logiciels SIG jusqu'à ses analyses spatiales avancées et ses missions de terrain, Géraud a édifié un profil complet de géomaticien, apte à intervenir à chaque maillon de la chaîne de traitement des données géographiques : de l'acquisition terrain à la production de cartographies thématiques, en passant par le traitement analytique et la modélisation prédictive. Son histoire est celle d'un jeune Africain qui, par l'excellence et le travail, s'approprie les technologies de l'information géographique pour contribuer au développement territorial de son pays et du continent.
     </p>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <span></span>
+      <a href="#chapitre-2" class="chapter-nav-next"><span><small>Suivant</small>Ch.2 — Formation Académique</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 2 | Formation Académique ============ -->
 <section class="chapter" id="chapitre-2">
@@ -130,7 +294,12 @@
       </div>
     </div>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-1" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.1 — Origines & Parcours</span></a>
+      <a href="#chapitre-3" class="chapter-nav-next"><span><small>Suivant</small>Ch.3 — Compétences SIG & Géomatique</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 3 | Compétences SIG & Géomatique ============ -->
 <section class="chapter" id="chapitre-3">
@@ -168,7 +337,12 @@
       </div>
     </div>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-2" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.2 — Formation Académique</span></a>
+      <a href="#chapitre-4" class="chapter-nav-next"><span><small>Suivant</small>Ch.4 — Outils & Technologies</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 4 | Outils & Technologies ============ -->
 <section class="chapter" id="chapitre-4">
@@ -254,7 +428,12 @@
       </div>
     </div>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-3" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.3 — Compétences SIG & Géomatique</span></a>
+      <a href="#chapitre-5" class="chapter-nav-next"><span><small>Suivant</small>Ch.5 — Projets Réalisés</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 5 | Projets Réalisés ============ -->
 <section class="chapter" id="chapitre-5">
@@ -366,7 +545,12 @@
       </div>
     </div>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-4" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.4 — Outils & Technologies</span></a>
+      <a href="#chapitre-6" class="chapter-nav-next"><span><small>Suivant</small>Ch.6 — Réalisations</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 6 | Quelques Réalisations ============ -->
 <section class="chapter" id="chapitre-6">
@@ -438,7 +622,12 @@
       </div>
     </div>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-5" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.5 — Projets Réalisés</span></a>
+      <a href="#chapitre-7" class="chapter-nav-next"><span><small>Suivant</small>Ch.7 — Dessins & Créativité</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 7 | Dessins & Créativité ============ -->
 <section class="chapter" id="chapitre-7">
@@ -459,6 +648,46 @@
       <div class="gallery-item reveal" data-gallery="dessins" data-src="img/dessins/dessin-3.jpg" data-title="Dessin à la main 3">
         <img src="img/dessins/dessin-3-thumb.jpg" alt="Dessin 3" loading="lazy">
       </div>
+    </div>
+  </div>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-6" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.6 — Réalisations</span></a>
+      <a href="#chapitre-8" class="chapter-nav-next"><span><small>Suivant</small>Ch.8 — Leadership & Engagement</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
+
+<!-- ============ LIENS UTILES ============ -->
+<section class="chapter liens-chapter" id="liens-utiles">
+  <div class="container">
+    <span class="chapter-number reveal">Liens Utiles</span>
+    <h2 class="reveal">Liens Utiles</h2>
+    <p class="reveal">
+      Voici quelques ressources et liens importants en lien avec la formation, les projets et le parcours professionnel de Géraud dans le domaine de la géomatique et des sciences de l'information géographique.
+    </p>
+
+    <div class="liens-grid" style="margin-top:28px;">
+      <a href="https://alicia227.github.io/geoacademie-platform/" target="_blank" rel="noopener noreferrer" class="lien-item reveal">
+        <span class="lien-icon">&#127979;</span>
+        <div>
+          <strong>FORMATION</strong>
+          <small>Plateforme de formation en géomatique</small>
+        </div>
+      </a>
+      <a href="https://aidofifinangnon-beep.github.io/reseau_geodesique_benin/" target="_blank" rel="noopener noreferrer" class="lien-item reveal">
+        <span class="lien-icon">&#127758;</span>
+        <div>
+          <strong>RÉSEAU GÉODÉSIQUE DU BÉNIN</strong>
+          <small>Infrastructure géodésique nationale</small>
+        </div>
+      </a>
+      <a href="https://fr.slideshare.net/slideshow/maitrisez-les-systemes-d-information-geographique-avec-qgis-formation-debutant-en-geomatique/287062843" target="_blank" rel="noopener noreferrer" class="lien-item reveal">
+        <span class="lien-icon">&#128202;</span>
+        <div>
+          <strong>FORMATION DE BASE EN SIG</strong>
+          <small>Maîtrisez les SIG avec QGIS</small>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -520,7 +749,12 @@
       Il ne se construit pas seul. Il évolue dans l'action, le collectif et la responsabilité, des valeurs qui fondent l'excellence du géomaticien engagé.
     </p>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-7" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.7 — Dessins & Créativité</span></a>
+      <a href="#chapitre-9" class="chapter-nav-next"><span><small>Suivant</small>Ch.9 — Perspectives & Vision</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 9 | Perspectives & Vision ============ -->
 <section class="chapter" id="chapitre-9">
@@ -537,7 +771,12 @@
       À moyen terme, il projette de poursuivre sa formation par un master en géomatique ou en sciences de l'information géographique, de développer des projets de recherche appliquée et de renforcer sa contribution à la communauté géomatique africaine. Son engagement sportif, associatif et professionnel dessine le portrait d'un jeune leader complet, dont la force technique est soutenue par une éthique de l'action et du service collectif.
     </p>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-8" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.8 — Leadership & Engagement</span></a>
+      <a href="#chapitre-10" class="chapter-nav-next"><span><small>Suivant</small>Ch.10 — Mes Attentes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
 
 <!-- ============ CHAPITRE 10 | Mes Attentes ============ -->
 <section class="chapter" id="chapitre-10">
@@ -598,13 +837,18 @@
       </div>
     </div>
   </div>
-</section>
 
-<!-- ============ CHAPITRE 11 | Contact & Liens ============ -->
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-9" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.9 — Perspectives & Vision</span></a>
+      <a href="#chapitre-11" class="chapter-nav-next"><span><small>Suivant</small>Ch.11 — Contact</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></a>
+    </nav>
+  </section>
+
+<!-- ============ CHAPITRE 11 | Contact ============ -->
 <section class="chapter" id="chapitre-11">
   <div class="container">
     <span class="chapter-number reveal">Chapitre 11</span>
-    <h2 class="reveal">Contact &amp; Liens</h2>
+    <h2 class="reveal">Contact</h2>
     <p class="reveal">
       Pour toute collaboration, projet ou échange professionnel, Géraud est joignable par les canaux suivants. N'hésitez pas à le contacter pour des missions de géomatique, des projets SIG, des formations ou des partenariats liés à l'aménagement du territoire et au développement durable.
     </p>
@@ -631,37 +875,13 @@
         <a href="https://www.linkedin.com/in/g%C3%A9raud-finangnon-a%C3%AFdofi-a074953aa" target="_blank" rel="noopener noreferrer" class="contact-link">Voir le profil</a>
       </div>
     </div>
-
-    <hr class="divider">
-
-    <div class="liens-section reveal">
-      <h3 style="font-size:1.2rem; color:var(--amber-dark); margin-bottom:20px;">Liens Utiles</h3>
-      <div class="liens-grid">
-        <a href="https://alicia227.github.io/geoacademie-platform/" target="_blank" rel="noopener noreferrer" class="lien-item">
-          <span class="lien-icon">&#127979;</span>
-          <div>
-            <strong>FORMATION</strong>
-            <small>Plateforme de formation en géomatique</small>
-          </div>
-        </a>
-        <a href="https://aidofifinangnon-beep.github.io/reseau_geodesique_benin/" target="_blank" rel="noopener noreferrer" class="lien-item">
-          <span class="lien-icon">&#127758;</span>
-          <div>
-            <strong>RÉSEAU GÉODÉSIQUE DU BÉNIN</strong>
-            <small>Infrastructure géodésique nationale</small>
-          </div>
-        </a>
-        <a href="https://fr.slideshare.net/slideshow/maitrisez-les-systemes-d-information-geographique-avec-qgis-formation-debutant-en-geomatique/287062843" target="_blank" rel="noopener noreferrer" class="lien-item">
-          <span class="lien-icon">&#128202;</span>
-          <div>
-            <strong>FORMATION DE BASE EN SIG</strong>
-            <small>Maîtrisez les SIG avec QGIS</small>
-          </div>
-        </a>
-      </div>
-    </div>
   </div>
-</section>
+
+    <nav class="chapter-nav" aria-label="Navigation entre chapitres">
+      <a href="#chapitre-10" class="chapter-nav-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg><span><small>Précédent</small>Ch.10 — Mes Attentes</span></a>
+      <span></span>
+    </nav>
+  </section>
 
 <!-- ============ CONCLUSION ============ -->
 <section class="chapter conclusion" id="conclusion">
