@@ -851,6 +851,56 @@ h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.25; color: var
   opacity: 1;
 }
 
+/* HD download button on realisation cards */
+.realisation-card-download {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: var(--glass-dark);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(194,120,73,.35);
+  color: var(--gold-light);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  z-index: 5;
+  box-shadow: 0 2px 12px rgba(0,0,0,.35);
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.realisation-card:hover .realisation-card-download {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.realisation-card-download:hover {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+  transform: scale(1.08) !important;
+  box-shadow: var(--shadow-gold);
+}
+
+.realisation-card-download svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.realisation-dl-label {
+  font-family: var(--font-body);
+  line-height: 1;
+}
+
 .realisation-card img {
   width: 100%;
   aspect-ratio: 4/3;

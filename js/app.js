@@ -435,6 +435,7 @@
         contentEl.appendChild(iframe);
         if (downloadBtn) {
           downloadBtn.href = item.src;
+          downloadBtn.setAttribute('download', '');
           downloadBtn.style.display = 'flex';
         }
       } else {
@@ -442,8 +443,11 @@
         img.src = item.src;
         img.alt = item.title || '';
         contentEl.appendChild(img);
+        // Show download button for images too (HD download)
         if (downloadBtn) {
-          downloadBtn.style.display = 'none';
+          downloadBtn.href = item.src;
+          downloadBtn.setAttribute('download', '');
+          downloadBtn.style.display = 'flex';
         }
       }
 
@@ -531,7 +535,10 @@
     var galleryItems = document.querySelectorAll('[data-gallery]');
     for (var i = 0; i < galleryItems.length; i++) {
       (function (item) {
-        item.addEventListener('click', function () {
+        item.addEventListener('click', function (e) {
+          // Ignore clicks on download buttons
+          if (e.target.closest('.realisation-card-download')) return;
+
           var group = item.getAttribute('data-gallery');
           var groupItems = document.querySelectorAll('[data-gallery="' + group + '"]');
           var items = [];
